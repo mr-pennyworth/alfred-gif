@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>mr.pennyworth.gif</string>
+	<key>category</key>
+	<string>Internet</string>
+	<key>connections</key>
+	<dict>
+		<key>12246986-CCD9-4CFB-A388-6780118E8073</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>91DD521D-37E0-45D1-9DD1-3FE2C7A0D936</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>1F55B002-55D8-4A4F-AD72-A1E2854DEAB0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2439F641-A050-4406-8592-685C9F77A884</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>23173D39-B895-4284-8D91-DA19084A9534</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B8C01511-85B8-4066-AABE-C1C2AB44EECD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>5FD17AF0-4A40-4447-B0C4-D09A2927D9C9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1F55B002-55D8-4A4F-AD72-A1E2854DEAB0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>766E1508-18B9-4AEA-829D-410A0A6596B1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D4DF06DF-EE49-4403-8203-81CE3DFB5421</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B7BF0458-29EB-4FDB-9B1E-422BCAB10091</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F072D3D1-AB7F-4571-842F-2FEC3462E112</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B8C01511-85B8-4066-AABE-C1C2AB44EECD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F072D3D1-AB7F-4571-842F-2FEC3462E112</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B8DB0D76-82FB-456D-94F3-DAFC50B58258</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>44CDD528-D545-44E4-ACBC-EB111433B1B0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D09D266A-FCE8-4386-9CFD-222EED5E2CDF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B8DB0D76-82FB-456D-94F3-DAFC50B58258</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D4DF06DF-EE49-4403-8203-81CE3DFB5421</key>
+		<array/>
+		<key>E4949A54-F834-48EA-A3C4-7BC188770BFD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B8DB0D76-82FB-456D-94F3-DAFC50B58258</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F072D3D1-AB7F-4571-842F-2FEC3462E112</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E4949A54-F834-48EA-A3C4-7BC188770BFD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>86EA3074-481A-4484-B4A4-DC0EB428CB59</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>↩/click: copy GIF to clipboard</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D09D266A-FCE8-4386-9CFD-222EED5E2CDF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Mr. Pennyworth</string>
+	<key>description</key>
+	<string>Search Tenor for GIFs</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>GIF Search</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>cat /tmp/alfred-gif-query</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B8C01511-85B8-4066-AABE-C1C2AB44EECD</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query="$(cat /tmp/alfred-gif-query)"
+
+function is_server_up() {
+  pgrep gif-downloader.bin &gt; /dev/null
+}
+
+function start_server() {
+  ./gif-downloader.bin &gt; /tmp/alfred-gif-search.log 2&gt;&amp;1 &amp; 
+}
+
+if ! is_server_up; then
+  start_server
+fi
+
+curl -s -G 'http://localhost:8910/' --data-urlencode "query=$query" \
+  | './AlfredGifBrowser.app/Contents/Resources/scripts/alfred-gif-browser'</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E4949A54-F834-48EA-A3C4-7BC188770BFD</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>start</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>23173D39-B895-4284-8D91-DA19084A9534</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>gif</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>query=$1
+
+echo -n "$query" &gt; /tmp/alfred-gif-query
+
+if [[ -z "$result_json" ]]; then
+
+cat &lt;&lt; EOF
+{"items": [
+  {"title": "Search Tenor for \"$query\"",
+   "subtitle": "↩: search",
+   "arg": "$query"}]}
+EOF
+
+else
+  
+  echo "$result_json"
+
+fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>type query and press ↩</string>
+				<key>title</key>
+				<string>Search Tenor for GIFs</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F072D3D1-AB7F-4571-842F-2FEC3462E112</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>start</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>44CDD528-D545-44E4-ACBC-EB111433B1B0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.hidealfred</string>
+			<key>uid</key>
+			<string>86EA3074-481A-4484-B4A4-DC0EB428CB59</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>result_json</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>B8DB0D76-82FB-456D-94F3-DAFC50B58258</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>32</integer>
+				<key>hotmod</key>
+				<integer>1835008</integer>
+				<key>hotstring</key>
+				<string>G</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>B7BF0458-29EB-4FDB-9B1E-422BCAB10091</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query="$(cat /tmp/alfred-gif-query)"
+
+cat &lt;&lt; EOF
+{"items": [
+  {"title": "Searching for \"$query\"...",
+   "subtitle": "Loading...",
+   "arg": "$query",
+   "valid": false}]}
+EOF</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>D09D266A-FCE8-4386-9CFD-222EED5E2CDF</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>.setup-gif-search</string>
+				<key>subtext</key>
+				<string>.setup-gif-search</string>
+				<key>text</key>
+				<string>Setup GIF Search</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>5FD17AF0-4A40-4447-B0C4-D09A2927D9C9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
+				<string></string>
+				<key>fadespeed</key>
+				<integer>0</integer>
+				<key>fillmode</key>
+				<integer>0</integer>
+				<key>font</key>
+				<string></string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>largetypetext</key>
+				<string>Allow "Accessibility"
+For "AlfredGifBrowser.app"
+
+The GIF browser needs these permissions for:
+  - knowing when alfred hides; to hide itself
+  - monitoring arrow key presses
+  - getting position of alfred on screen for showing up right below it</string>
+				<key>textcolor</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>2439F641-A050-4406-8592-685C9F77A884</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+chmod +x ./gif-downloader.bin
+
+xattr -d com.apple.quarantine ./AlfredGifBrowser.app
+xattr -d com.apple.quarantine ./gif-downloader.bin
+
+open ./AlfredGifBrowser.app
+
+# Kill instances running from previous version of workflow
+killall gif-downloader.bin
+
+open "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility"
+osascript &lt;&lt;END
+  tell application "System Preferences"
+    activate
+  end tell
+END
+
+./gif-downloader.bin &gt; /tmp/alfred-gif-search.log 2&gt;&amp;1 &amp;</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1F55B002-55D8-4A4F-AD72-A1E2854DEAB0</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+cd "$alfred_workflow_cache"
+rm *.html</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>D4DF06DF-EE49-4403-8203-81CE3DFB5421</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>.gif-clear-cached-searches</string>
+				<key>subtext</key>
+				<string>.gif-clear-cached-searches</string>
+				<key>text</key>
+				<string>Clear Cached GIF Searches (keep GIFs)</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>766E1508-18B9-4AEA-829D-410A0A6596B1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>.gif-delete-downloads</string>
+				<key>subtext</key>
+				<string>.gif-delete-downloads</string>
+				<key>text</key>
+				<string>Delete Downloaded GIFs</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>12246986-CCD9-4CFB-A388-6780118E8073</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+cd "$alfred_workflow_cache"
+rm *.html
+rm *.gif</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>91DD521D-37E0-45D1-9DD1-3FE2C7A0D936</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>12246986-CCD9-4CFB-A388-6780118E8073</key>
+		<dict>
+			<key>xpos</key>
+			<integer>185</integer>
+			<key>ypos</key>
+			<integer>725</integer>
+		</dict>
+		<key>1F55B002-55D8-4A4F-AD72-A1E2854DEAB0</key>
+		<dict>
+			<key>note</key>
+			<string>- de-quarantine
+- grant permissions
+- start downloader</string>
+			<key>xpos</key>
+			<integer>365</integer>
+			<key>ypos</key>
+			<integer>420</integer>
+		</dict>
+		<key>23173D39-B895-4284-8D91-DA19084A9534</key>
+		<dict>
+			<key>xpos</key>
+			<integer>10</integer>
+			<key>ypos</key>
+			<integer>140</integer>
+		</dict>
+		<key>2439F641-A050-4406-8592-685C9F77A884</key>
+		<dict>
+			<key>xpos</key>
+			<integer>555</integer>
+			<key>ypos</key>
+			<integer>420</integer>
+		</dict>
+		<key>44CDD528-D545-44E4-ACBC-EB111433B1B0</key>
+		<dict>
+			<key>xpos</key>
+			<integer>800</integer>
+			<key>ypos</key>
+			<integer>140</integer>
+		</dict>
+		<key>5FD17AF0-4A40-4447-B0C4-D09A2927D9C9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>185</integer>
+			<key>ypos</key>
+			<integer>420</integer>
+		</dict>
+		<key>766E1508-18B9-4AEA-829D-410A0A6596B1</key>
+		<dict>
+			<key>xpos</key>
+			<integer>185</integer>
+			<key>ypos</key>
+			<integer>585</integer>
+		</dict>
+		<key>86EA3074-481A-4484-B4A4-DC0EB428CB59</key>
+		<dict>
+			<key>xpos</key>
+			<integer>595</integer>
+			<key>ypos</key>
+			<integer>170</integer>
+		</dict>
+		<key>91DD521D-37E0-45D1-9DD1-3FE2C7A0D936</key>
+		<dict>
+			<key>note</key>
+			<string>rm *.html
+rm *.gif</string>
+			<key>xpos</key>
+			<integer>555</integer>
+			<key>ypos</key>
+			<integer>725</integer>
+		</dict>
+		<key>B7BF0458-29EB-4FDB-9B1E-422BCAB10091</key>
+		<dict>
+			<key>xpos</key>
+			<integer>185</integer>
+			<key>ypos</key>
+			<integer>270</integer>
+		</dict>
+		<key>B8C01511-85B8-4066-AABE-C1C2AB44EECD</key>
+		<dict>
+			<key>xpos</key>
+			<integer>185</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+		<key>B8DB0D76-82FB-456D-94F3-DAFC50B58258</key>
+		<dict>
+			<key>xpos</key>
+			<integer>745</integer>
+			<key>ypos</key>
+			<integer>170</integer>
+		</dict>
+		<key>D09D266A-FCE8-4386-9CFD-222EED5E2CDF</key>
+		<dict>
+			<key>note</key>
+			<string>Show "Searching..."</string>
+			<key>xpos</key>
+			<integer>555</integer>
+			<key>ypos</key>
+			<integer>270</integer>
+		</dict>
+		<key>D4DF06DF-EE49-4403-8203-81CE3DFB5421</key>
+		<dict>
+			<key>note</key>
+			<string>rm *.html</string>
+			<key>xpos</key>
+			<integer>555</integer>
+			<key>ypos</key>
+			<integer>585</integer>
+		</dict>
+		<key>E4949A54-F834-48EA-A3C4-7BC188770BFD</key>
+		<dict>
+			<key>xpos</key>
+			<integer>555</integer>
+			<key>ypos</key>
+			<integer>10</integer>
+		</dict>
+		<key>F072D3D1-AB7F-4571-842F-2FEC3462E112</key>
+		<dict>
+			<key>xpos</key>
+			<integer>365</integer>
+			<key>ypos</key>
+			<integer>140</integer>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>0.0.1</string>
+	<key>webaddress</key>
+	<string>https://github.com/mr-pennyworth/alfred-gif</string>
+</dict>
+</plist>

@@ -1,0 +1,22 @@
+{
+  "name": "gif-downloader",
+  "version": "0.0.1",
+  "description": "Search and download gifs from Tenor",
+  "bin": "gif-downloader.js",
+  "scripts": {
+    "pkg": "pkg -d --targets node12-macos-x64 . --output gif-downloader",
+    "start": "node gif-downloader.js"
+  },
+  "author": "Mr. Pennyworth",
+  "pkg": {
+    "assets": [
+      "gif-navigator.js",
+      "gif-browser.css",
+      "smoothscroll.js"
+    ]
+  },
+  "license": "MIT",
+  "dependencies": {
+    "lookup-dns-cache": "^2.1.0"
+  }
+}

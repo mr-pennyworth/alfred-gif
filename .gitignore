@@ -1,0 +1,13 @@
+*~
+*.pyc
+*.xcworkspace
+*.alfredworkflow
+*.bin
+.idea
+__pycache__
+AlfredGifBrowser.app
+DerivedData
+wfbuild
+xcuserdata
+node_modules
+xcuserdata/

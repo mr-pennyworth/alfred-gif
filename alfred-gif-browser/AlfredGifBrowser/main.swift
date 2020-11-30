@@ -20,7 +20,9 @@ class GifDraggerWebView: WKWebView, NSDraggingSource {
     pasteboardItem.setData(selectedGif.dataRepresentation, forType: .fileURL)
 
     let draggingItem = NSDraggingItem(pasteboardWriter: pasteboardItem)
-    draggingItem.setDraggingFrame(self.bounds, contents: nil)
+    draggingItem.setDraggingFrame(
+      self.bounds,
+      contents: NSImage.init(contentsOf: selectedGif))
 
     self.beginDraggingSession(
       with: [draggingItem],

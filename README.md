@@ -3,7 +3,7 @@
 Search GIFs on [Tenor](https://tenor.com) from [Alfred](https://alfredapp.com).
 
 Here's an example of searching and inserting a GIF in a google doc:
-![](demo-media/alfred-gif-search.gif)
+![](demo-media/alfred-gif-search-with-drag-thumbnail.gif)
 
 ### Installation
 1. Download the [latest release](https://github.com/mr-pennyworth/alfred-gif/releases/latest/download/GIF.Search.alfredworkflow).

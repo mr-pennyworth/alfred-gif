@@ -96,7 +96,8 @@ function makeAlfredResponse(htmlPath) {
       'arg': 'dummy',
       'valid': true,
       'title': 'Select with arrow keys, drag-n-drop with mouse',
-      'subtitle': '[↩: search again] [⌘↩/⌘+click: copy GIF to clipboard]',
+      'subtitle':
+      '[↩: search again] [⌘↩/⌘+click: copy GIF] [⌥↩/⌥+click: copy URL]',
       'quicklookurl': htmlPath
     }]
   };

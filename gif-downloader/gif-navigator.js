@@ -22,44 +22,41 @@ function isElementInViewport(el) {
   );
 }
 
-function activate(x, y) {
+function activate(elem, scroll) {
   let active = document.querySelector('.active');
-  var next = document.elementFromPoint(x, y);
+  var next = elem;
   if (active == next) return;
   if (!next || next.tagName != 'IMG') return;
 
   if (active) active.classList.remove('active');
   next.classList.add('active');
 
-  document.querySelector("#caption").textContent = 
-    next.getAttribute("title");
-
-  return next.getAttribute("src").split("/").get(-2);
-}
-
-function changeActive(nextActiveFunc) {
-  let active = document.querySelector('.active');
-  var next = null;
-  if (!active) {
-    // no active element, so make the first image active.
-    next = document.querySelector('img');
-  } else {
-    next = nextActiveFunc(active);
-    active.classList.remove('active');
-  }
-  if (!next) return;
-  next.classList.add('active');
-
   // Safari doesn't support smooth scrolling
   // http://iamdustan.com/smoothscroll/
-  if (!isElementInViewport(next)) {
+  if (scroll && !isElementInViewport(next)) {
     next.scrollIntoView({behavior: "smooth"});
   }
 
   document.querySelector("#caption").textContent = 
     next.getAttribute("title");
 
-  return next.getAttribute("src").split("/").get(-2);
+  return next.getAttribute("src");
+}
+
+function activateAtCoords(x, y) {
+  return activate(document.elementFromPoint(x, y), false);
+}
+
+function changeActive(nextActiveFunc) {
+  let active = document.querySelector('.active');
+  var next = null;
+  if (active) {
+    next = nextActiveFunc(active);
+  } else {
+    // no active element, so make the first image active.
+    next = document.querySelector('img');
+  }
+  return activate(next, true);
 }
 
 const up = () => changeActive((e) => e.previousSibling);

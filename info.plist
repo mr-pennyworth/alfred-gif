@@ -164,6 +164,16 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>5146AE95-246C-4941-97B6-5BB50046732D</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>↩/click: copy URL to clipboard</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>D09D266A-FCE8-4386-9CFD-222EED5E2CDF</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -184,29 +194,6 @@
 	<string>GIF Search</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>cat /tmp/alfred-gif-query</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>B8C01511-85B8-4066-AABE-C1C2AB44EECD</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -244,6 +231,37 @@ curl -s -G 'http://localhost:8910/' --data-urlencode "query=$query" \
 			<string>E4949A54-F834-48EA-A3C4-7BC188770BFD</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>cat /tmp/alfred-gif-query</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B8C01511-85B8-4066-AABE-C1C2AB44EECD</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.hidealfred</string>
+			<key>uid</key>
+			<string>86EA3074-481A-4484-B4A4-DC0EB428CB59</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -344,14 +362,6 @@ fi</string>
 			<integer>1</integer>
 		</dict>
 		<dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.hidealfred</string>
-			<key>uid</key>
-			<string>86EA3074-481A-4484-B4A4-DC0EB428CB59</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
 			<key>config</key>
 			<dict>
 				<key>argument</key>
@@ -368,6 +378,14 @@ fi</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>B8DB0D76-82FB-456D-94F3-DAFC50B58258</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.hidealfred</string>
+			<key>uid</key>
+			<string>5146AE95-246C-4941-97B6-5BB50046732D</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -432,27 +450,6 @@ EOF</string>
 			<string>D09D266A-FCE8-4386-9CFD-222EED5E2CDF</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>.setup-gif-search</string>
-				<key>subtext</key>
-				<string>.setup-gif-search</string>
-				<key>text</key>
-				<string>Setup GIF Search</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>5FD17AF0-4A40-4447-B0C4-D09A2927D9C9</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -532,28 +529,23 @@ END
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>.setup-gif-search</string>
+				<key>subtext</key>
+				<string>.setup-gif-search</string>
+				<key>text</key>
+				<string>Setup GIF Search</string>
+				<key>withspace</key>
 				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>#!/bin/bash
-
-cd "$alfred_workflow_cache"
-rm *.html</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>D4DF06DF-EE49-4403-8203-81CE3DFB5421</string>
+			<string>5FD17AF0-4A40-4447-B0C4-D09A2927D9C9</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -579,23 +571,28 @@ rm *.html</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>.gif-delete-downloads</string>
-				<key>subtext</key>
-				<string>.gif-delete-downloads</string>
-				<key>text</key>
-				<string>Delete Downloaded GIFs</string>
-				<key>withspace</key>
+				<key>concurrently</key>
 				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+cd "$alfred_workflow_cache"
+rm *.html</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>12246986-CCD9-4CFB-A388-6780118E8073</string>
+			<string>D4DF06DF-EE49-4403-8203-81CE3DFB5421</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -623,6 +620,27 @@ rm *.gif</string>
 			<string>91DD521D-37E0-45D1-9DD1-3FE2C7A0D936</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>.gif-delete-downloads</string>
+				<key>subtext</key>
+				<string>.gif-delete-downloads</string>
+				<key>text</key>
+				<string>Delete Downloaded GIFs</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>12246986-CCD9-4CFB-A388-6780118E8073</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -668,6 +686,13 @@ rm *.gif</string>
 			<key>ypos</key>
 			<integer>140</integer>
 		</dict>
+		<key>5146AE95-246C-4941-97B6-5BB50046732D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>595</integer>
+			<key>ypos</key>
+			<integer>225</integer>
+		</dict>
 		<key>5FD17AF0-4A40-4447-B0C4-D09A2927D9C9</key>
 		<dict>
 			<key>xpos</key>
@@ -687,7 +712,7 @@ rm *.gif</string>
 			<key>xpos</key>
 			<integer>595</integer>
 			<key>ypos</key>
-			<integer>170</integer>
+			<integer>115</integer>
 		</dict>
 		<key>91DD521D-37E0-45D1-9DD1-3FE2C7A0D936</key>
 		<dict>
@@ -754,7 +779,7 @@ rm *.gif</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.0.1</string>
+	<string>0.0.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/mr-pennyworth/alfred-gif</string>
 </dict>

@@ -16,6 +16,9 @@ Here's an example of searching and inserting a GIF in a google doc:
 - To copy the selected GIF to clipboard:
   - either `⌘↩`
   - or `⌘-click`
+- To copy the URL of selected GIF to clipboard:
+  - either `⌥↩`
+  - or `⌥-click`
 - To drop the GIF into apps that support it:
   - drag from Alfred and drop into that app
 

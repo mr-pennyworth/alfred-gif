@@ -48,6 +48,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       .appendingPathComponent("mr.pennyworth.gif")
 
   lazy var selectedGif: URL = gifCacheDir.appendingPathComponent("selected.gif")
+  var selectedGifWebUrl: String = ""
 
   var urls: [URL?] = []
   var urlIdx = 0
@@ -121,15 +122,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       return
     }
     self.webview.evaluateJavaScript(
-      "activate(\(x), \(y))",
+      "activateAtCoords(\(x), \(y))",
       completionHandler: { (out, err) in
-        if let gifHash = out {
-          let gifPath = self.gifCacheDir.appendingPathComponent("\(gifHash).gif")
-
-          let cp = Process()
-          cp.launchPath = "/bin/cp"
-          cp.arguments = [gifPath.path, self.selectedGif.path]
-          cp.launch()
+        if let gifUrl = out {
+          self.gifWithUrlChosen("\(gifUrl)")
         }
         // log("\(out)")
         // log("\(err)")
@@ -158,11 +154,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     alfredWatcher.start(
       onAlfredWindowDestroy: {
         self.urls = [nil]
-        if (self.alfredWatcher.mods.contains(.command)) {
+        let modifiers = self.alfredWatcher.mods
+        if (modifiers.contains(.command)) {
           let pb = NSPasteboard.general
           pb.clearContents()
-          pb.declareTypes([NSPasteboard.PasteboardType.fileContents], owner: nil)
+          pb.declareTypes([.fileContents], owner: nil)
           pb.writeObjects([self.selectedGif as NSURL])
+        } else if (modifiers.contains(.option)) {
+          log(self.selectedGifWebUrl)
+          let pb = NSPasteboard.general
+          pb.clearContents()
+          pb.setString(self.selectedGifWebUrl, forType: .string)
         }
         self.window.orderOut(self)
       },
@@ -173,6 +175,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     )
   }
 
+  func gifWithUrlChosen(_ gifUrl: String) {
+    // Example gif url:
+    // "https://media.tenor.com/images/f4c8059e75d21aa301174d4374ec4680/tenor.gif"
+    self.selectedGifWebUrl = gifUrl
+    let gifId = gifUrl.split(separator: "/")[3]
+    let gifPath = self.gifCacheDir.appendingPathComponent("\(gifId).gif")
+    let selected = self.gifCacheDir.appendingPathComponent("selected.gif")
+
+    let cp = Process()
+    cp.launchPath = "/bin/cp"
+    cp.arguments = [gifPath.path, selected.path]
+    cp.launch()
+  }
+
   func makeBrowseFunction(_ jsFuncName: String) -> () -> () {
     func gifBrowser() {
       if (!self.window.isVisible) {
@@ -181,14 +197,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       self.webview.evaluateJavaScript(
         "\(jsFuncName)()",
         completionHandler: { (out, err) in
-          if let gifHash = out {
-            let gifPath = self.gifCacheDir.appendingPathComponent("\(gifHash).gif")
-            let selected = self.gifCacheDir.appendingPathComponent("selected.gif")
-
-            let cp = Process()
-            cp.launchPath = "/bin/cp"
-            cp.arguments = [gifPath.path, selected.path]
-            cp.launch()
+          if let gifUrl = out {
+            self.gifWithUrlChosen("\(gifUrl)")
           }
           // log("\(out)")
           // log("\(err)")

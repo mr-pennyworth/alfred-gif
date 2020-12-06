@@ -179,9 +179,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   func gifWithUrlChosen(_ gifUrl: String) {
     // Example gif url:
-    // "https://media.tenor.com/images/f4c8059e75d21aa301174d4374ec4680/tenor.gif"
+    // https://c.tenor.com/-bHlmkHiqoQAAAAM/harry-potter-dobby.gif
     self.selectedGifWebUrl = gifUrl
-    let gifId = gifUrl.split(separator: "/")[3]
+    let gifId = gifUrl.split(separator: "/")[2]
     let gifPath = self.gifCacheDir.appendingPathComponent("\(gifId).gif")
     let selected = self.gifCacheDir.appendingPathComponent("selected.gif")
 

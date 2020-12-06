@@ -97,21 +97,24 @@ function makeAlfredResponse(htmlPath) {
       'valid': true,
       'title': 'Select with arrow keys, drag-n-drop with mouse',
       'subtitle':
-      '[↩: search again] [⌘↩/⌘+click: copy GIF] [⌥↩/⌥+click: copy URL]',
+      '[↩: search again] [⌘: copy GIF] [⌥: copy URL]',
       'quicklookurl': htmlPath
     }]
   };
 }
 
-function parseTenorData(tenorData) {
-  // Example weburl: https://tenor.com/search/harry-potter-gifs
-  let htmlName = tenorData.weburl.split('/').get(-1);
+function parseTenorData(tenorData, query) {
+  let htmlName =
+    query
+      .toLowerCase()
+      .replace(/[^0-9a-z ]/gi, '')
+      .replace(' ', '-');
   let htmlPath = `${CACHE_DIR}/${htmlName}.html`;
 
   let gifInfos = tenorData.results.map((tenorEntry) => {
     // Example tinygif url:
-    // https://media.tenor.com/images/54a19462ec0f72a97e914772f350a114/tenor.gif
-    let gifUrl = tenorEntry.media[0].tinygif.url;
+    // https://c.tenor.com/-bHlmkHiqoQAAAAM/harry-potter-dobby.gif
+    let gifUrl = tenorEntry.media_formats.tinygif.url;
     let gifHash = gifUrl.split('/').get(-2);
     let gifPath = `${CACHE_DIR}/${gifHash}.gif`;
 
@@ -193,10 +196,12 @@ http.createServer(function (req, res) {
     // not all GIFs were downloaded. Hence, we don't just return here.
   }
 
-  let tenorUrl = new URL('https://api.tenor.com/v1/search');
+  let tenorUrl = new URL('https://tenor.googleapis.com/v2/search');
   tenorUrl.searchParams.append('q', query);
   tenorUrl.searchParams.append('limit', '50');
-  tenorUrl.searchParams.append('key', 'BDFXUULTOEHA');
+  tenorUrl.searchParams.append('key', 'AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ');
+  tenorUrl.searchParams.append('client_key', 'gboard');
+  tenorUrl.searchParams.append('media_filter', 'tinygif');
 
   https.get(tenorUrl, REQUEST_OPTS, (tenorRes) => {
     const { statusCode } = tenorRes;
@@ -233,7 +238,7 @@ http.createServer(function (req, res) {
     tenorRes.on('end', () => {
       try {
         const tenorData = JSON.parse(rawData);
-        const parsed = parseTenorData(tenorData);
+        const parsed = parseTenorData(tenorData, query);
         res.write(JSON.stringify(parsed.alfredResponse));
         res.end();
         console.log('Responded to alfred');

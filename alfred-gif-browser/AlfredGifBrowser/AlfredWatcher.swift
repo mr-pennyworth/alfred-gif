@@ -1,17 +1,15 @@
-import AXSwift
 import Cocoa
-import Swindler
-import PromiseKit
 import CoreFoundation
 
+typealias Dict = [String: Any]
 
 class AlfredWatcher {
-  var swindler: Swindler.State!
   var onDestroy: (() -> Void)!
   var onDownArrow: (() -> Void)!
   var onUpArrow: (() -> Void)!
   var onRightArrow: (() -> Void)!
   var onLeftArrow: (() -> Void)!
+  var setAlfredFrame: ((NSRect)-> Void)!
 
   var mods: NSEvent.ModifierFlags = NSEvent.ModifierFlags()
 
@@ -25,27 +23,15 @@ class AlfredWatcher {
     onDownArrowPressed: @escaping () -> Void,
     onUpArrowPressed: @escaping () -> Void,
     onRightArrowPressed: @escaping () -> Void,
-    onLeftArrowPressed: @escaping () -> Void
+    onLeftArrowPressed: @escaping () -> Void,
+    setAlfredFrame: @escaping (NSRect) -> Void
   ) {
     self.onDestroy = onAlfredWindowDestroy
     self.onDownArrow = onDownArrowPressed
     self.onUpArrow = onUpArrowPressed
     self.onRightArrow = onRightArrowPressed
     self.onLeftArrow = onLeftArrowPressed
-
-    guard AXSwift.checkIsProcessTrusted(prompt: true) else {
-      NSLog("Not trusted as an AX process; please authorize and re-launch")
-      NSApp.terminate(self)
-      return
-    }
-
-    Swindler.initialize().done { state in
-      self.swindler = state
-      self.setupEventHandlers()
-    }.catch { error in
-      NSLog("Fatal error: failed to initialize Swindler: \(error)")
-      NSApp.terminate(self)
-    }
+    self.setAlfredFrame = setAlfredFrame
 
     NSEvent.addGlobalMonitorForEvents(
       matching: [NSEvent.EventTypeMask.keyDown],
@@ -72,57 +58,25 @@ class AlfredWatcher {
         self.mods = event.modifierFlags.intersection(.deviceIndependentFlagsMask)
       }
     )
+
+    DistributedNotificationCenter.default().addObserver(
+      self,
+      selector: #selector(handleAlfredNotification),
+      name: NSNotification.Name(rawValue: "alfred.presssecretary"),
+      object: nil,
+      suspensionBehavior: .deliverImmediately
+    )
   }
 
-  private func isAlfredWindow(window: Window) -> Bool {
-    let bundle = window.application.bundleIdentifier ?? ""
-    let title = window.title.value
-    return (bundle == "com.runningwithcrayons.Alfred" && title == "Alfred")
-  }
-
-  private func setupEventHandlers() {
-    swindler.on { (event: WindowDestroyedEvent) in
-      if (self.isAlfredWindow(window: event.window)) {
-        NSLog("Alfred window destroyed")
-        self.onDestroy()
-      }
-    }
-  }
-
-  func alfredFrame() -> CGRect? {
-    if (swindler == nil) {
-      // when the application isn't already running, and the first call is
-      // by invoking the app specific url, swindler might not have been
-      // initialized by then. for that special case, we explicitly get
-      // alfred frame without relying on swindler.
-      let options = CGWindowListOption([.excludeDesktopElements, .optionOnScreenOnly])
-      let windowListInfo = CGWindowListCopyWindowInfo(options, CGWindowID(0))
-      let wli = windowListInfo as NSArray? as? [[String: AnyObject]]
-      if let alfredWindow = wli?.first(where: { windowInfo in
-        if let name = windowInfo["kCGWindowOwnerName"] as? String {
-          if (name == "Alfred") {
-            return true
-          } else {
-            return false
-          }
-        } else {
-          return false
-        }
-      }) {
-        if let bounds = alfredWindow["kCGWindowBounds"] {
-          let frame = CGRect.init(
-            dictionaryRepresentation: bounds as! CFDictionary
-          )
-          log("Non-Swindler frame: \(String(describing: frame))")
-          return frame
-        }
-      }
-
-      return nil
-    } else {
-      let alfredWindow = swindler.knownWindows.first(where: self.isAlfredWindow)!
-      let alfred = alfredWindow.frame
-      return alfred.value
+  @objc func handleAlfredNotification(notification: NSNotification) {
+    // log("\(notification)")
+    let notif = notification.userInfo! as! Dict
+    let notifType = notif["announcement"] as! String
+    if (notifType == "window.hidden") {
+      self.onDestroy()
+    } else if (notifType == "selection.changed") {
+      let frame = NSRectFromString(notif["windowframe"] as! String)
+      self.setAlfredFrame(frame)
     }
   }
 }

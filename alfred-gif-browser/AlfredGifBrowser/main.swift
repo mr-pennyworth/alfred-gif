@@ -155,20 +155,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     window.contentView?.addSubview(webview)
     alfredWatcher.start(
       onAlfredWindowDestroy: {
-        self.urls = [nil]
-        let modifiers = self.alfredWatcher.mods
-        if (modifiers.contains(.command)) {
-          let pb = NSPasteboard.general
-          pb.clearContents()
-          pb.declareTypes([.fileContents], owner: nil)
-          pb.writeObjects([self.selectedGif as NSURL])
-        } else if (modifiers.contains(.option)) {
-          log(self.selectedGifWebUrl)
-          let pb = NSPasteboard.general
-          pb.clearContents()
-          pb.setString(self.selectedGifWebUrl, forType: .string)
+        if (self.window.isVisible) {
+          self.urls = [nil]
+          let modifiers = self.alfredWatcher.mods
+          if (modifiers.contains(.command)) {
+            let pb = NSPasteboard.general
+            pb.clearContents()
+            pb.declareTypes([.fileContents], owner: nil)
+            pb.writeObjects([self.selectedGif as NSURL])
+          } else if (modifiers.contains(.option)) {
+            log(self.selectedGifWebUrl)
+            let pb = NSPasteboard.general
+            pb.clearContents()
+            pb.setString(self.selectedGifWebUrl, forType: .string)
+          }
+          self.window.orderOut(self)
         }
-        self.window.orderOut(self)
       },
       onDownArrowPressed: self.makeBrowseFunction("down"),
       onUpArrowPressed: self.makeBrowseFunction("up"),

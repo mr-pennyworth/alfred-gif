@@ -22,7 +22,8 @@ class GifDraggerWebView: WKWebView, NSDraggingSource {
     let draggingItem = NSDraggingItem(pasteboardWriter: pasteboardItem)
     draggingItem.setDraggingFrame(
       self.bounds,
-      contents: NSImage.init(contentsOf: selectedGif))
+      contents: NSImage.init(contentsOf: selectedGif)
+    )
 
     self.beginDraggingSession(
       with: [draggingItem],
@@ -41,6 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   lazy var screenWidth: CGFloat = screen.frame.width
   lazy var screenHeight: CGFloat = screen.frame.height
 
+  var alfredFrame: NSRect = NSRect()
   let gifCacheDir: URL =
     FileManager.default.homeDirectoryForCurrentUser
       .appendingPathComponent("Library")
@@ -52,8 +54,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   lazy var selectedGif: URL = gifCacheDir.appendingPathComponent("selected.gif")
   var selectedGifWebUrl: String = ""
 
-  var urls: [URL?] = []
-  var urlIdx = 0
+  var url: URL? = nil
   var css = ""
 
   let alfredWatcher: AlfredWatcher = AlfredWatcher()
@@ -91,28 +92,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     return webview
   }()
 
-  func setUrls(_ urlListJsonString: String) {
-    self.urlIdx = 0
-    let data = Data(urlListJsonString.utf8)
-    do {
-      let array = try JSONSerialization.jsonObject(with: data) as! [String]
-
-      // empty strings map to file URL equivalent to "./",
-      // which we later on decide to not render in render()
-      self.urls = array.map({ path in
-        if (path.starts(with: "/")) {
-          return URL(fileURLWithPath: path)
-        } else {
-          return URL(string: path)
-        }
-      })
-      render()
-      // puzzler: why would the following cause a SEGFAULT?
-      //          that too never while running in xcode
-      // log("urls: \(self.urls)")
-    } catch {
-      log("Error: \(error)")
-    }
+  func setUrl(_ path: String) {
+    self.url = URL(fileURLWithPath: path)
+    render()
   }
 
   func mouseAtInWebviewViewport(x: CGFloat, y: CGFloat) {
@@ -156,7 +138,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     alfredWatcher.start(
       onAlfredWindowDestroy: {
         if (self.window.isVisible) {
-          self.urls = [nil]
+          self.url = nil
           let modifiers = self.alfredWatcher.mods
           if (modifiers.contains(.command)) {
             let pb = NSPasteboard.general
@@ -175,7 +157,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       onDownArrowPressed: self.makeBrowseFunction("down"),
       onUpArrowPressed: self.makeBrowseFunction("up"),
       onRightArrowPressed: self.makeBrowseFunction("right"),
-      onLeftArrowPressed: self.makeBrowseFunction("left")
+      onLeftArrowPressed: self.makeBrowseFunction("left"),
+      setAlfredFrame: { self.alfredFrame = $0 }
     )
   }
 
@@ -248,28 +231,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
 
   func render() {
-    if (self.urls.count == 0 || self.urls == [nil]) {
-      return
-    }
-
-    if let alfredFrame = self.alfredWatcher.alfredFrame() {
-      self.urlIdx = (self.urlIdx + self.urls.count) % self.urls.count
-      if let url = self.urls[self.urlIdx] {
-        log("Rendering URL at index: \(self.urlIdx): \(url)")
-        if (url.isFileURL) {
-          webview.loadFileURL(
-            injectCSS(fileUrl: url),
-            allowingReadAccessTo: url.deletingLastPathComponent()
-          )
-        } else {
-          webview.load(URLRequest(url: url))
-        }
-        webview.isHidden = false
-        showWindow(alfred: alfredFrame)
-      } else {
-        log("Hiding as no URL was provided at index: \(self.urlIdx)")
-        webview.isHidden = true
-      }
+    if let url = self.url {
+      webview.loadFileURL(
+        injectCSS(fileUrl: url),
+        allowingReadAccessTo: url.deletingLastPathComponent()
+      )
+      showWindow(alfred: alfredFrame)
+    } else {
+      self.window.orderOut(self)
     }
   }
 
@@ -284,7 +253,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
           alpha: 1
         )
         readFile(named: param["cssFile"]!, then: { css in self.css = css })
-        readFile(named: param["specFile"]!, then: setUrls)
+        setUrl(param["gifHtml"]!)
       default:
         break
       }

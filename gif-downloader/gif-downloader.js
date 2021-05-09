@@ -102,18 +102,15 @@ function makeAlfredResponse(htmlPath) {
   };
 }
 
-function parseTenorData(tenorData, query) {
-  let htmlName =
-    query
-      .toLowerCase()
-      .replace(/[^0-9a-z ]/gi, '')
-      .replace(' ', '-');
+function parseTenorData(tenorData, query, isSticker) {
+  let htmlName = htmlFileName(query, isSticker);
   let htmlPath = `${CACHE_DIR}/${htmlName}.html`;
+  let format = isSticker ? 'tinygif_transparent' : 'tinygif';
 
   let gifInfos = tenorData.results.map((tenorEntry) => {
     // Example tinygif url:
     // https://c.tenor.com/-bHlmkHiqoQAAAAM/harry-potter-dobby.gif
-    let gifUrl = tenorEntry.media_formats.tinygif.url;
+    let gifUrl = tenorEntry.media_formats[format].url;
     let gifHash = gifUrl.split('/').get(-2);
     let gifPath = `${CACHE_DIR}/${gifHash}.gif`;
 
@@ -176,11 +173,23 @@ async function downloadGifs(gifs) {
 }
 
 
+function htmlFileName(query, isSticker) {
+  let stickerSuffix = isSticker ? '-sticker' : '';
+  let prefix =
+    query
+      .toLowerCase()
+      .replace(/[^0-9a-z ]/gi, '')
+      .replace(' ', '-');
+  let suffix = `-gifs${stickerSuffix}.html`;
+  return prefix + suffix;
+}
+
 http.createServer(function (req, res) {
   let url = new URL(req.url, `http://${req.headers.host}`);
   let query = url.searchParams.get('query');
+  let isSticker = url.searchParams.get('sticker') != null;
 
-  let cachedHtmlName = `${query.toLowerCase().split(" ").join("-")}-gifs.html`;
+  let cachedHtmlName = htmlFileName(query, isSticker);
   let cachedHtmlPath = `${CACHE_DIR}/${cachedHtmlName}`;
 
   if (fs.existsSync(cachedHtmlPath)) {
@@ -200,7 +209,12 @@ http.createServer(function (req, res) {
   tenorUrl.searchParams.append('limit', '50');
   tenorUrl.searchParams.append('key', 'AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ');
   tenorUrl.searchParams.append('client_key', 'gboard');
-  tenorUrl.searchParams.append('media_filter', 'tinygif');
+  if (isSticker) {
+    tenorUrl.searchParams.append('searchfilter', 'sticker');
+    tenorUrl.searchParams.append('media_filter', 'tinygif_transparent');
+  } else {
+    tenorUrl.searchParams.append('media_filter', 'tinygif');
+  }
 
   https.get(tenorUrl, REQUEST_OPTS, (tenorRes) => {
     const { statusCode } = tenorRes;
@@ -237,7 +251,7 @@ http.createServer(function (req, res) {
     tenorRes.on('end', () => {
       try {
         const tenorData = JSON.parse(rawData);
-        const parsed = parseTenorData(tenorData, query);
+        const parsed = parseTenorData(tenorData, query, isSticker);
         res.write(JSON.stringify(parsed.alfredResponse));
         res.end();
         console.log('Responded to alfred');

@@ -11,7 +11,7 @@ Here's an example of searching and inserting a GIF in a google doc:
 ![](demo-media/alfred-gif-search-with-drag-thumbnail.gif)
 
 Animated stickers are also GIFs, but they typically tend to have
-a transparent background. Here's an example of how animated stickers look like:
+a transparent background. Here's an example of how animated stickers look like:<br/>
 ![](demo-media/alfred-gif-animated-stickers.gif)
 
 ### Installation

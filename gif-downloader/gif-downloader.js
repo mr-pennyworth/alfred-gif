@@ -200,6 +200,11 @@ function errorForwarder(handler) {
 http.createServer(errorForwarder(function (req, res) {
   let url = new URL(req.url, `http://${req.headers.host}`);
   let query = url.searchParams.get('query');
+  if (!query) {
+    throw new Error(
+      `The url must contain a parameter named query. "${url}" doesn't.`
+    );
+  }
   let isSticker = url.searchParams.get('sticker') != null;
 
   let cachedHtmlName = htmlFileName(query, isSticker);

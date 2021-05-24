@@ -184,7 +184,20 @@ function htmlFileName(query, isSticker) {
   return prefix + suffix;
 }
 
-http.createServer(function (req, res) {
+function errorForwarder(handler) {
+  return function(req, res) {
+    try {
+      return handler(req, res);
+    } catch (error) {
+      console.error(error);
+      res.statusCode = 500;
+      res.write(error.stack);
+      res.end();
+    }
+  };
+}
+
+http.createServer(errorForwarder(function (req, res) {
   let url = new URL(req.url, `http://${req.headers.host}`);
   let query = url.searchParams.get('query');
   let isSticker = url.searchParams.get('sticker') != null;
@@ -269,4 +282,4 @@ http.createServer(function (req, res) {
   });
 
   console.log(url.searchParams);
-}).listen(8910);
+})).listen(8910);

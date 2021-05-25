@@ -108,24 +108,19 @@ function parseTenorData(tenorData, query, isSticker) {
   let format = isSticker ? 'tinygif_transparent' : 'tinygif';
 
   let gifInfos = tenorData.results.map((tenorEntry) => {
-    // Example tinygif url:
-    // https://c.tenor.com/-bHlmkHiqoQAAAAM/harry-potter-dobby.gif
     let gifUrl = tenorEntry.media_formats[format].url;
-    let gifHash = gifUrl.split('/').get(-2);
-    let gifPath = `${CACHE_DIR}/${gifHash}.gif`;
 
     // Example itemurl: https://tenor.com/view/freaking-out-kermit-gif-8832122
     // Title we want  : Freaking Out Kermit
     let title =
       decodeURI(tenorEntry.itemurl)
-        .split('/')[4]
+        .split('/').get(-1)
         .split('-').slice(0, -2)
         .join(' ')
         .title();
 
     return {
       'url': gifUrl,
-      'path': gifPath,
       'title': title
     };
   });
@@ -152,24 +147,6 @@ function parseTenorData(tenorData, query, isSticker) {
     'gifs': gifInfos,
     'alfredResponse': makeAlfredResponse(htmlPath)
   };
-}
-
-
-async function downloadGifs(gifs) {
-  gifs.forEach((gif) => {
-    fs.exists(gif.path, (exists) => {
-      if (!exists) {
-        const stream = fs.createWriteStream(gif.path);
-        const getter = gif.url.startsWith('https:') ? https : http;
-        getter.get(gif.url, REQUEST_OPTS, (response) => {
-          console.log(`Downloading ${gif.url}`);
-          response.pipe(stream);
-        });
-      } else {
-        console.log(`${gif.url} already downloaded`);
-      }
-    });
-  });
 }
 
 
@@ -273,7 +250,6 @@ http.createServer(errorForwarder(function (req, res) {
         res.write(JSON.stringify(parsed.alfredResponse));
         res.end();
         console.log('Responded to alfred');
-        downloadGifs(parsed.gifs);
       } catch (e) {
         console.error(e.message);
         res.write(e.message);

@@ -11,3 +11,4 @@ wfbuild
 xcuserdata
 node_modules
 xcuserdata/
+.build

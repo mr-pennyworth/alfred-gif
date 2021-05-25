@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CADFCB2AFE273C7094297C60 /* WebViewCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFCA7AFF9CEC408F515ED8 /* WebViewCache.swift */; };
 		D01646BA255AF27A00646F0C /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01646B9255AF27A00646F0C /* utils.swift */; };
 		D03EA8D325551E0400D3656E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03EA8D225551E0400D3656E /* main.swift */; };
 		D03EA8D725551E0700D3656E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D03EA8D625551E0700D3656E /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CADFCA7AFF9CEC408F515ED8 /* WebViewCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewCache.swift; sourceTree = "<group>"; };
 		D01646B9255AF27A00646F0C /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		D03EA8CF25551E0400D3656E /* AlfredGifBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlfredGifBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03EA8D225551E0400D3656E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				D03EA8DB25551E0700D3656E /* Info.plist */,
 				D04F70D4255893B3008E17A4 /* NSColorExtension.swift */,
 				D01646B9255AF27A00646F0C /* utils.swift */,
+				CADFCA7AFF9CEC408F515ED8 /* WebViewCache.swift */,
 			);
 			path = AlfredGifBrowser;
 			sourceTree = "<group>";
@@ -139,7 +142,7 @@
 			);
 			mainGroup = D03EA8C625551E0400D3656E;
 			packageReferences = (
-				D0E43DF9265CB0330016375D /* XCRemoteSwiftPackageReference "FileWatcher" */,
+				D0E43DF9265CB0330016375D /* XCRemoteSwiftPackageReference "FileWatcher.git" */,
 			);
 			productRefGroup = D03EA8D025551E0400D3656E /* Products */;
 			projectDirPath = "";
@@ -171,6 +174,7 @@
 				D03EA8D325551E0400D3656E /* main.swift in Sources */,
 				D04F70D5255893B3008E17A4 /* NSColorExtension.swift in Sources */,
 				D01646BA255AF27A00646F0C /* utils.swift in Sources */,
+				CADFCB2AFE273C7094297C60 /* WebViewCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +307,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = mr.pennyworth.AlfredGifBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -324,7 +328,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = mr.pennyworth.AlfredGifBrowser;
@@ -357,7 +361,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D0E43DF9265CB0330016375D /* XCRemoteSwiftPackageReference "FileWatcher" */ = {
+		D0E43DF9265CB0330016375D /* XCRemoteSwiftPackageReference "FileWatcher.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/eonist/FileWatcher.git";
 			requirement = {
@@ -370,7 +374,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		D0E43DFA265CB0330016375D /* FileWatcher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D0E43DF9265CB0330016375D /* XCRemoteSwiftPackageReference "FileWatcher" */;
+			package = D0E43DF9265CB0330016375D /* XCRemoteSwiftPackageReference "FileWatcher.git" */;
 			productName = FileWatcher;
 		};
 /* End XCSwiftPackageProductDependency section */

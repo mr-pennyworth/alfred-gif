@@ -36,10 +36,18 @@ func readFile<T>(named: String, then: (String) -> T) -> T? {
   }
 }
 
-// src: https://stackoverflow.com/a/26406426
 extension URL {
+  // src: https://stackoverflow.com/a/26406426
   var queryParameters: QueryParameters {
     return QueryParameters(url: self)
+  }
+
+  func parentDirName() -> String {
+    pathComponents.get(-2)
+  }
+
+  func endsWith(_ suffix: String) -> Bool {
+    path.hasSuffix(suffix)
   }
 }
 
@@ -53,5 +61,15 @@ class QueryParameters {
 
   subscript(name: String) -> String? {
     return queryItems.first(where: { $0.name == name })?.value
+  }
+}
+
+extension Array {
+  func get(_ index: Int) -> Element {
+    if index < 0 {
+      return self[count + index]
+    } else {
+      return self[index]
+    }
   }
 }

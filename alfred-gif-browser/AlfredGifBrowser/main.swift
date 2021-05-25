@@ -42,6 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   lazy var screenWidth: CGFloat = screen.frame.width
   lazy var screenHeight: CGFloat = screen.frame.height
 
+  let webViewCache: WebViewCache = WebViewCache()
   var alfredFrame: NSRect = NSRect()
   let gifCacheDir: URL =
     FileManager.default.homeDirectoryForCurrentUser
@@ -51,7 +52,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       .appendingPathComponent("Workflow Data")
       .appendingPathComponent("mr.pennyworth.gif")
 
-  lazy var selectedGif: URL = gifCacheDir.appendingPathComponent("selected.gif")
   var selectedGifWebUrl: String = ""
 
   var url: URL? = nil
@@ -84,11 +84,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     return window
   }()
 
-  lazy var webview: WKWebView = {
+  lazy var webview: GifDraggerWebView = {
     let configuration = WKWebViewConfiguration()
     configuration.preferences.setValue(true, forKey: "developerExtrasEnabled")
     let webview = GifDraggerWebView(frame: .zero, configuration: configuration)
-    webview.selectedGif = selectedGif
+    webview.selectedGif = gifCacheDir.appendingPathComponent("selected.gif")
     return webview
   }()
 
@@ -144,7 +144,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let pb = NSPasteboard.general
             pb.clearContents()
             pb.declareTypes([.fileContents], owner: nil)
-            pb.writeObjects([self.selectedGif as NSURL])
+            pb.writeObjects([self.webview.selectedGif as NSURL])
           } else if (modifiers.contains(.option)) {
             log(self.selectedGifWebUrl)
             let pb = NSPasteboard.general
@@ -163,17 +163,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
 
   func gifWithUrlChosen(_ gifUrl: String) {
-    // Example gif url:
-    // https://c.tenor.com/-bHlmkHiqoQAAAAM/harry-potter-dobby.gif
     self.selectedGifWebUrl = gifUrl
-    let gifId = gifUrl.split(separator: "/")[2]
-    let gifPath = self.gifCacheDir.appendingPathComponent("\(gifId).gif")
-    let selected = self.gifCacheDir.appendingPathComponent("selected.gif")
-
-    let cp = Process()
-    cp.launchPath = "/bin/cp"
-    cp.arguments = [gifPath.path, selected.path]
-    cp.launch()
+    if let webURL = URL(string: gifUrl) {
+      if let gifPath = self.webViewCache[webURL] {
+        // FileManager.copyItem and replaceItem are finicky
+        // as they expect proper error handling.
+        // Instead, just launch the "cp" program.
+        let cp = Process()
+        cp.launchPath = "/bin/cp"
+        cp.arguments = [gifPath.path, webview.selectedGif.path]
+        cp.launch()
+      } else {
+        log("Gif \(gifUrl) not yet downloaded.")
+      }
+    } else {
+      log("Invalid URL: \(gifUrl)")
+    }
   }
 
   func makeBrowseFunction(_ jsFuncName: String) -> () -> () {

@@ -26,11 +26,11 @@ class AlfredWatcher {
     onLeftArrowPressed: @escaping () -> Void,
     setAlfredFrame: @escaping (NSRect) -> Void
   ) {
-    self.onDestroy = onAlfredWindowDestroy
-    self.onDownArrow = onDownArrowPressed
-    self.onUpArrow = onUpArrowPressed
-    self.onRightArrow = onRightArrowPressed
-    self.onLeftArrow = onLeftArrowPressed
+    onDestroy = onAlfredWindowDestroy
+    onDownArrow = onDownArrowPressed
+    onUpArrow = onUpArrowPressed
+    onRightArrow = onRightArrowPressed
+    onLeftArrow = onLeftArrowPressed
     self.setAlfredFrame = setAlfredFrame
 
     NSEvent.addGlobalMonitorForEvents(
@@ -73,10 +73,10 @@ class AlfredWatcher {
     let notif = notification.userInfo! as! Dict
     let notifType = notif["announcement"] as! String
     if (notifType == "window.hidden") {
-      self.onDestroy()
+      onDestroy()
     } else if (notifType == "selection.changed") {
       let frame = NSRectFromString(notif["windowframe"] as! String)
-      self.setAlfredFrame(frame)
+      setAlfredFrame(frame)
     }
   }
 }

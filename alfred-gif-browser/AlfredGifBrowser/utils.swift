@@ -39,7 +39,7 @@ func readFile<T>(named: String, then: (String) -> T) -> T? {
 extension URL {
   // src: https://stackoverflow.com/a/26406426
   var queryParameters: QueryParameters {
-    return QueryParameters(url: self)
+    QueryParameters(url: self)
   }
 
   func parentDirName() -> String {
@@ -60,7 +60,7 @@ class QueryParameters {
   }
 
   subscript(name: String) -> String? {
-    return queryItems.first(where: { $0.name == name })?.value
+    queryItems.first(where: { $0.name == name })?.value
   }
 }
 

@@ -21,11 +21,11 @@ class GifDraggerWebView: WKWebView, NSDraggingSource {
 
     let draggingItem = NSDraggingItem(pasteboardWriter: pasteboardItem)
     draggingItem.setDraggingFrame(
-      self.bounds,
+      bounds,
       contents: NSImage.init(contentsOf: selectedGif)
     )
 
-    self.beginDraggingSession(
+    beginDraggingSession(
       with: [draggingItem],
       event: event,
       source: self
@@ -93,19 +93,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }()
 
   func setUrl(_ path: String) {
-    self.url = URL(fileURLWithPath: path)
+    url = URL(fileURLWithPath: path)
     render()
   }
 
   func mouseAtInWebviewViewport(x: CGFloat, y: CGFloat) {
-    if (!self.window.isVisible) {
+    if (!window.isVisible) {
       return
     }
-    let wv = self.webview.frame
+    let wv = webview.frame
     if (x < 0 || x > wv.width || y < 0 || y > wv.height) {
       return
     }
-    self.webview.evaluateJavaScript(
+    webview.evaluateJavaScript(
       "activateAtCoords(\(x), \(y))",
       completionHandler: { (out, err) in
         if let gifUrl = out {
@@ -154,18 +154,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
           self.window.orderOut(self)
         }
       },
-      onDownArrowPressed: self.makeBrowseFunction("down"),
-      onUpArrowPressed: self.makeBrowseFunction("up"),
-      onRightArrowPressed: self.makeBrowseFunction("right"),
-      onLeftArrowPressed: self.makeBrowseFunction("left"),
+      onDownArrowPressed: makeBrowseFunction("down"),
+      onUpArrowPressed: makeBrowseFunction("up"),
+      onRightArrowPressed: makeBrowseFunction("right"),
+      onLeftArrowPressed: makeBrowseFunction("left"),
       setAlfredFrame: { self.alfredFrame = $0 }
     )
   }
 
   func gifWithUrlChosen(_ gifUrl: String) {
-    self.selectedGifWebUrl = gifUrl
+    selectedGifWebUrl = gifUrl
     if let webURL = URL(string: gifUrl) {
-      if let gifPath = self.webViewCache[webURL] {
+      if let gifPath = webViewCache[webURL] {
         // FileManager.copyItem and replaceItem are finicky
         // as they expect proper error handling.
         // Instead, just launch the "cp" program.
@@ -183,10 +183,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   func makeBrowseFunction(_ jsFuncName: String) -> () -> () {
     func gifBrowser() {
-      if (!self.window.isVisible) {
+      if (!window.isVisible) {
         return
       }
-      self.webview.evaluateJavaScript(
+      webview.evaluateJavaScript(
         "\(jsFuncName)()",
         completionHandler: { (out, err) in
           if let gifUrl = out {
@@ -220,7 +220,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     return html.replacingOccurrences(
       of: "</\(cssContainer)>",
-      with: "<style>\n\(self.css)</style></\(cssContainer)>"
+      with: "<style>\n\(css)</style></\(cssContainer)>"
     )
   }
 
@@ -236,14 +236,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
 
   func render() {
-    if let url = self.url {
+    if let url = url {
       webview.loadFileURL(
         injectCSS(fileUrl: url),
         allowingReadAccessTo: url.deletingLastPathComponent()
       )
       showWindow(alfred: alfredFrame)
     } else {
-      self.window.orderOut(self)
+      window.orderOut(self)
     }
   }
 

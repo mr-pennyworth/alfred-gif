@@ -104,7 +104,7 @@ function makeAlfredResponse(htmlPath) {
 
 function parseTenorData(tenorData, query, isSticker) {
   let htmlName = htmlFileName(query, isSticker);
-  let htmlPath = `${CACHE_DIR}/${htmlName}.html`;
+  let htmlPath = `${CACHE_DIR}/${htmlName}`;
   let format = isSticker ? 'tinygif_transparent' : 'tinygif';
 
   let gifInfos = tenorData.results.map((tenorEntry) => {

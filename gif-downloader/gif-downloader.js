@@ -26,7 +26,7 @@ const CACHE_DIR = (() => {
   if (!cache) {
     let HOME = process.env.HOME;
     cache = `${HOME}/Library/Caches/com.runningwithcrayons.Alfred` +
-      '/Workflow Data/mr.pennyworth.gif/';
+      '/Workflow Data/mr.pennyworth.gif';
   }
   if (!fs.existsSync(cache)) {
     fs.mkdirSync(cache, { recursive: true });

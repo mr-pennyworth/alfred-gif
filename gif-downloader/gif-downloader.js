@@ -143,10 +143,7 @@ function parseTenorData(tenorData, query, isSticker) {
     }
   });
 
-  return {
-    'gifs': gifInfos,
-    'alfredResponse': makeAlfredResponse(htmlPath)
-  };
+  return makeAlfredResponse(htmlPath);
 }
 
 
@@ -247,7 +244,7 @@ http.createServer(errorForwarder(function (req, res) {
       try {
         const tenorData = JSON.parse(rawData);
         const parsed = parseTenorData(tenorData, query, isSticker);
-        res.write(JSON.stringify(parsed.alfredResponse));
+        res.write(JSON.stringify(parsed));
         res.end();
         console.log('Responded to alfred');
       } catch (e) {

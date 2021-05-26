@@ -14,6 +14,7 @@
 		D03EA8FA255567A300D3656E /* AlfredWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03EA8F9255567A300D3656E /* AlfredWatcher.swift */; };
 		D04F70D325586069008E17A4 /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = D04F70D225586069008E17A4 /* scripts */; };
 		D04F70D5255893B3008E17A4 /* NSColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F70D4255893B3008E17A4 /* NSColorExtension.swift */; };
+		D078D375265E3DE60019BAE2 /* Alfred in Frameworks */ = {isa = PBXBuildFile; productRef = D078D374265E3DE60019BAE2 /* Alfred */; };
 		D0E43DFB265CB0330016375D /* FileWatcher in Frameworks */ = {isa = PBXBuildFile; productRef = D0E43DFA265CB0330016375D /* FileWatcher */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D078D375265E3DE60019BAE2 /* Alfred in Frameworks */,
 				D0E43DFB265CB0330016375D /* FileWatcher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +114,7 @@
 			name = AlfredGifBrowser;
 			packageProductDependencies = (
 				D0E43DFA265CB0330016375D /* FileWatcher */,
+				D078D374265E3DE60019BAE2 /* Alfred */,
 			);
 			productName = AlfredGifBrowser;
 			productReference = D03EA8CF25551E0400D3656E /* AlfredGifBrowser.app */;
@@ -143,6 +146,7 @@
 			mainGroup = D03EA8C625551E0400D3656E;
 			packageReferences = (
 				D0E43DF9265CB0330016375D /* XCRemoteSwiftPackageReference "FileWatcher" */,
+				D078D373265E3DE60019BAE2 /* XCRemoteSwiftPackageReference "AlfredSwift" */,
 			);
 			productRefGroup = D03EA8D025551E0400D3656E /* Products */;
 			projectDirPath = "";
@@ -306,7 +310,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MARKETING_VERSION = 0.2.0;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = mr.pennyworth.AlfredGifBrowser;
@@ -327,7 +331,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MARKETING_VERSION = 0.2.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
@@ -361,6 +365,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D078D373265E3DE60019BAE2 /* XCRemoteSwiftPackageReference "AlfredSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mr-pennyworth/AlfredSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.4;
+			};
+		};
 		D0E43DF9265CB0330016375D /* XCRemoteSwiftPackageReference "FileWatcher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/eonist/FileWatcher";
@@ -372,6 +384,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D078D374265E3DE60019BAE2 /* Alfred */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D078D373265E3DE60019BAE2 /* XCRemoteSwiftPackageReference "AlfredSwift" */;
+			productName = Alfred;
+		};
 		D0E43DFA265CB0330016375D /* FileWatcher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D0E43DF9265CB0330016375D /* XCRemoteSwiftPackageReference "FileWatcher" */;

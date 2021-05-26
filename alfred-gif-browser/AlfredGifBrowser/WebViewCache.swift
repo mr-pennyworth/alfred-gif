@@ -1,3 +1,4 @@
+import Alfred
 import FileWatcher
 import Foundation
 

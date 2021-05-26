@@ -12,7 +12,6 @@
 		D03EA8D325551E0400D3656E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03EA8D225551E0400D3656E /* main.swift */; };
 		D03EA8D725551E0700D3656E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D03EA8D625551E0700D3656E /* Assets.xcassets */; };
 		D03EA8FA255567A300D3656E /* AlfredWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03EA8F9255567A300D3656E /* AlfredWatcher.swift */; };
-		D04F70D325586069008E17A4 /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = D04F70D225586069008E17A4 /* scripts */; };
 		D04F70D5255893B3008E17A4 /* NSColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F70D4255893B3008E17A4 /* NSColorExtension.swift */; };
 		D078D375265E3DE60019BAE2 /* Alfred in Frameworks */ = {isa = PBXBuildFile; productRef = D078D374265E3DE60019BAE2 /* Alfred */; };
 		D0E43DFB265CB0330016375D /* FileWatcher in Frameworks */ = {isa = PBXBuildFile; productRef = D0E43DFA265CB0330016375D /* FileWatcher */; };
@@ -39,7 +38,6 @@
 		D03EA8D625551E0700D3656E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D03EA8DB25551E0700D3656E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D03EA8F9255567A300D3656E /* AlfredWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlfredWatcher.swift; sourceTree = "<group>"; };
-		D04F70D225586069008E17A4 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		D04F70D4255893B3008E17A4 /* NSColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,7 +74,6 @@
 		D03EA8D125551E0400D3656E /* AlfredGifBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				D04F70D225586069008E17A4 /* scripts */,
 				D03EA8D225551E0400D3656E /* main.swift */,
 				D03EA8F9255567A300D3656E /* AlfredWatcher.swift */,
 				D03EA8D625551E0700D3656E /* Assets.xcassets */,
@@ -163,7 +160,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D03EA8D725551E0700D3656E /* Assets.xcassets in Resources */,
-				D04F70D325586069008E17A4 /* scripts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

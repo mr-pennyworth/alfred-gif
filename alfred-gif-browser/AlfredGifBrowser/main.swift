@@ -78,7 +78,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // have no effect at all, and we don't want titled because we don't want window
     // border
     let windowBkg = NSView(frame: NSRect.init())
-    windowBkg.backgroundColor = NSColor.fromHexString(hex: "#1d1e28", alpha: 1)
+    var bkgColor = "#1d1e28"
+    if let bkgHexWithAlpha = Alfred.theme["window-color"] as? String {
+      let bkgHexNoAlpha = String(bkgHexWithAlpha.dropLast(2))
+      bkgColor = bkgHexNoAlpha
+    }
+    windowBkg.backgroundColor = NSColor.fromHexString(hex: bkgColor, alpha: 1)
+
     window.contentView = windowBkg
 
     return window
@@ -253,10 +259,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       let param = url.queryParameters
       switch url.host {
       case "update":
-        window.contentView?.backgroundColor = NSColor.fromHexString(
-          hex: param["bkgColor"]!,
-          alpha: 1
-        )
         setUrl(param["gifHtml"]!)
       default:
         break

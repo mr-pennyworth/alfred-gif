@@ -1,12 +1,9 @@
 #!/usr/bin/python
 
-import alfred
 import json
-import os
 import subprocess
 import sys
 import urllib
-import uuid
 
 
 if __name__ == '__main__':
@@ -23,16 +20,13 @@ if __name__ == '__main__':
   alfreditems = json.load(sys.stdin)
   gifHtml = alfreditems['items'][0]['gifHtml']
 
-  bkgColor = alfred.theme()['window.color']
-  bkgColorWithoutAlpha = bkgColor[:-2]
 
   # https://stackoverflow.com/a/50466440
   urllib.quote_plus = urllib.quote
   subprocess.call([
     'open', '-g',
     'alfred-gif-browser://update?%s' % urllib.urlencode({
-      'gifHtml': gifHtml,
-      'bkgColor': bkgColorWithoutAlpha
+      'gifHtml': gifHtml
     })
   ])
 

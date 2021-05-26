@@ -143,7 +143,7 @@ function parseTenorData(tenorData, query, isSticker) {
     }
   });
 
-  return makeAlfredResponse(htmlPath);
+  return htmlPath;
 }
 
 
@@ -171,6 +171,20 @@ function errorForwarder(handler) {
   };
 }
 
+function respondToAlfred(response, htmlPath) {
+  response.setHeader('Content-Type', 'application/json');
+  response.end(
+    JSON.stringify(makeAlfredResponse(htmlPath)),
+    'utf8'
+  );
+
+  // This value should be assigned to new response, which is just a dummy
+  return {
+    'write': (_) => {},
+    'end': () => {}
+  };
+}
+
 http.createServer(errorForwarder(function (req, res) {
   let url = new URL(req.url, `http://${req.headers.host}`);
   let query = url.searchParams.get('query');
@@ -185,15 +199,10 @@ http.createServer(errorForwarder(function (req, res) {
   let cachedHtmlPath = `${CACHE_DIR}/${cachedHtmlName}`;
 
   if (fs.existsSync(cachedHtmlPath)) {
-    res.write(JSON.stringify(makeAlfredResponse(cachedHtmlPath)));
-    res.end();
-    console.log('Responded to alfred from cache');
-    res = {
-      'write': (_) => {},
-      'end': () => {}
-    };
     // we might have the cached html but still, maybe last time,
     // not all GIFs were downloaded. Hence, we don't just return here.
+    res = respondToAlfred(res, cachedHtmlPath);
+    console.log('Responded to alfred from cache');
   }
 
   let tenorUrl = new URL('https://tenor.googleapis.com/v2/search');
@@ -243,9 +252,8 @@ http.createServer(errorForwarder(function (req, res) {
     tenorRes.on('end', () => {
       try {
         const tenorData = JSON.parse(rawData);
-        const parsed = parseTenorData(tenorData, query, isSticker);
-        res.write(JSON.stringify(parsed));
-        res.end();
+        const htmlPath = parseTenorData(tenorData, query, isSticker);
+        respondToAlfred(res, htmlPath);
         console.log('Responded to alfred');
       } catch (e) {
         console.error(e.message);

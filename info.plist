@@ -356,8 +356,7 @@ then
 EOF
 else
 curl -s -G 'http://localhost:8910/' \
-  --data-urlencode "query=$query" \
-  | './AlfredGifBrowser.app/Contents/Resources/scripts/alfred-gif-browser'
+  --data-urlencode "query=$query"
 fi</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -837,8 +836,7 @@ EOF
 else
 curl -s -G 'http://localhost:8910/' \
   --data-urlencode "query=$query" \
-  --data-urlencode "sticker=1" \
-  | './AlfredGifBrowser.app/Contents/Resources/scripts/alfred-gif-browser'
+  --data-urlencode "sticker=1"
 fi</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>

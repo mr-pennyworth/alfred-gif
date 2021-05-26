@@ -2,7 +2,9 @@ const fs = require('fs');
 const http = require('http');
 const https = require('https');
 const path = require('path');
+const qs = require('querystring');
 
+const {execFile} = require('child_process');
 const {lookup} = require('lookup-dns-cache');
 
 // https://nodejs.org/api/http.html#http_http_get_options_callback
@@ -177,6 +179,14 @@ function respondToAlfred(response, htmlPath) {
     JSON.stringify(makeAlfredResponse(htmlPath)),
     'utf8'
   );
+
+  let escPath = qs.escape(htmlPath);
+  let gifBrowserUrl = `alfred-gif-browser://update?gifHtml=${escPath}`;
+  execFile('open', ['-g', gifBrowserUrl], (error, stdout, stderr) => {
+    if (error) {
+      console.error(error);
+    }
+  });
 
   // This value should be assigned to new response, which is just a dummy
   return {

@@ -56,7 +56,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   var selectedGifWebUrl: String = ""
 
   var url: URL? = nil
-  var css = ""
 
   let alfredWatcher: AlfredWatcher = AlfredWatcher()
 
@@ -221,7 +220,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     return html.replacingOccurrences(
       of: "</\(cssContainer)>",
-      with: "<style>\n\(css)</style></\(cssContainer)>"
+      with: "<style>\n\(Alfred.themeCSS)</style></\(cssContainer)>"
     )
   }
 
@@ -258,7 +257,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
           hex: param["bkgColor"]!,
           alpha: 1
         )
-        readFile(named: param["cssFile"]!, then: { css in self.css = css })
         setUrl(param["gifHtml"]!)
       default:
         break

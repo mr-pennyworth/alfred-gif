@@ -31,29 +31,6 @@ def flatten(arrayless_json_obj):
   return flattened
 
 
-def theme_css():
-  ''' example output:
-  :root {
-     --separator-color: #F9915700;
-     --search-text-font: System Light;
-     --window-paddingVertical: 10;
-     --result-shortcut-size: 16;
-     ...
-  }
-  '''
-  def convert(varname, val):
-    if type(val) == int:
-      if varname.endswith('blur'): return str(val) + '%'
-      else: return '%dpx' % val
-    elif not val.startswith('#'): return '"%s"' % val
-    else: return val
-
-  return ':root {\n  %s;\n}' % ';\n  '.join([
-    '--%s: %s' % (varname.replace('.', '-'), convert(varname, val))
-    for varname, val in theme().items()
-  ])
-
-
 @cached
 def theme():
   bundled_theme_filename = {

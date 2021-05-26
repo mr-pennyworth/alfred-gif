@@ -23,9 +23,6 @@ if __name__ == '__main__':
   alfreditems = json.load(sys.stdin)
   gifHtml = alfreditems['items'][0]['gifHtml']
 
-  cssfilepath = '/tmp/%s.css' % str(uuid.uuid4())
-  with open(cssfilepath, 'w') as tmpfile: tmpfile.write(alfred.theme_css())
-
   bkgColor = alfred.theme()['window.color']
   bkgColorWithoutAlpha = bkgColor[:-2]
 
@@ -35,7 +32,6 @@ if __name__ == '__main__':
     'open', '-g',
     'alfred-gif-browser://update?%s' % urllib.urlencode({
       'gifHtml': gifHtml,
-      'cssFile': cssfilepath,
       'bkgColor': bkgColorWithoutAlpha
     })
   ])

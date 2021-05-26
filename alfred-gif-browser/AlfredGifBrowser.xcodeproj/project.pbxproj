@@ -142,7 +142,7 @@
 			);
 			mainGroup = D03EA8C625551E0400D3656E;
 			packageReferences = (
-				D0E43DF9265CB0330016375D /* XCRemoteSwiftPackageReference "FileWatcher.git" */,
+				D0E43DF9265CB0330016375D /* XCRemoteSwiftPackageReference "FileWatcher" */,
 			);
 			productRefGroup = D03EA8D025551E0400D3656E /* Products */;
 			projectDirPath = "";
@@ -361,9 +361,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D0E43DF9265CB0330016375D /* XCRemoteSwiftPackageReference "FileWatcher.git" */ = {
+		D0E43DF9265CB0330016375D /* XCRemoteSwiftPackageReference "FileWatcher" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/eonist/FileWatcher.git";
+			repositoryURL = "https://github.com/eonist/FileWatcher";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 0.2.3;
@@ -374,7 +374,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		D0E43DFA265CB0330016375D /* FileWatcher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D0E43DF9265CB0330016375D /* XCRemoteSwiftPackageReference "FileWatcher.git" */;
+			package = D0E43DF9265CB0330016375D /* XCRemoteSwiftPackageReference "FileWatcher" */;
 			productName = FileWatcher;
 		};
 /* End XCSwiftPackageProductDependency section */

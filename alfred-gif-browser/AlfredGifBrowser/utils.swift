@@ -40,6 +40,10 @@ extension URL {
   func endsWith(_ suffix: String) -> Bool {
     path.hasSuffix(suffix)
   }
+
+  func exists() -> Bool {
+    FileManager.default.fileExists(atPath: path)
+  }
 }
 
 class QueryParameters {

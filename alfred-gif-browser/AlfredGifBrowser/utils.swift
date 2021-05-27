@@ -64,3 +64,18 @@ extension Array {
     }
   }
 }
+
+extension Data {
+  func asJsonObj() -> [String: Any]? {
+    do {
+      let parsedJson = try JSONSerialization.jsonObject(with: self)
+      if let json = parsedJson as? [String: Any] {
+        return json
+      }
+    } catch {
+      log("\(error)")
+      log("Error: Couldn't read JSON object from: \(self)")
+    }
+    return nil
+  }
+}

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CADFCB2AFE273C7094297C60 /* WebViewCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFCA7AFF9CEC408F515ED8 /* WebViewCache.swift */; };
+		CADFCC6C4F731C90DFC4F025 /* GifSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFC28AEB7498824B377D00 /* GifSearcher.swift */; };
 		D01646BA255AF27A00646F0C /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01646B9255AF27A00646F0C /* utils.swift */; };
 		D03EA8D325551E0400D3656E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03EA8D225551E0400D3656E /* main.swift */; };
 		D03EA8D725551E0700D3656E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D03EA8D625551E0700D3656E /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CADFC28AEB7498824B377D00 /* GifSearcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifSearcher.swift; sourceTree = "<group>"; };
 		CADFCA7AFF9CEC408F515ED8 /* WebViewCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewCache.swift; sourceTree = "<group>"; };
 		D01646B9255AF27A00646F0C /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		D03EA8CF25551E0400D3656E /* AlfredGifBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlfredGifBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +85,7 @@
 				D04F70D4255893B3008E17A4 /* NSColorExtension.swift */,
 				D01646B9255AF27A00646F0C /* utils.swift */,
 				CADFCA7AFF9CEC408F515ED8 /* WebViewCache.swift */,
+				CADFC28AEB7498824B377D00 /* GifSearcher.swift */,
 			);
 			path = AlfredGifBrowser;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				D04F70D5255893B3008E17A4 /* NSColorExtension.swift in Sources */,
 				D01646BA255AF27A00646F0C /* utils.swift in Sources */,
 				CADFCB2AFE273C7094297C60 /* WebViewCache.swift in Sources */,
+				CADFCC6C4F731C90DFC4F025 /* GifSearcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

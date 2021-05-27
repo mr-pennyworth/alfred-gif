@@ -17,6 +17,9 @@ WF_FILES = [
   'icon.png',
   'info.plist',
   'README.md',
+  'gif-browser.css',
+  'gif-browser.js',
+  'smoothscroll.js',
 ]
 
 

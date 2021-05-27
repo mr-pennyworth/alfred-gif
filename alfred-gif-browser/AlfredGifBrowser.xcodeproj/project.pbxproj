@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CADFC59F9A112C572B984136 /* HTMLFileGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFC270AD9E1A21B11C7B32 /* HTMLFileGenerator.swift */; };
 		CADFCB2AFE273C7094297C60 /* WebViewCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFCA7AFF9CEC408F515ED8 /* WebViewCache.swift */; };
 		CADFCC6C4F731C90DFC4F025 /* GifSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFC28AEB7498824B377D00 /* GifSearcher.swift */; };
 		D01646BA255AF27A00646F0C /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01646B9255AF27A00646F0C /* utils.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CADFC270AD9E1A21B11C7B32 /* HTMLFileGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLFileGenerator.swift; sourceTree = "<group>"; };
 		CADFC28AEB7498824B377D00 /* GifSearcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifSearcher.swift; sourceTree = "<group>"; };
 		CADFCA7AFF9CEC408F515ED8 /* WebViewCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewCache.swift; sourceTree = "<group>"; };
 		D01646B9255AF27A00646F0C /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				D01646B9255AF27A00646F0C /* utils.swift */,
 				CADFCA7AFF9CEC408F515ED8 /* WebViewCache.swift */,
 				CADFC28AEB7498824B377D00 /* GifSearcher.swift */,
+				CADFC270AD9E1A21B11C7B32 /* HTMLFileGenerator.swift */,
 			);
 			path = AlfredGifBrowser;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				D01646BA255AF27A00646F0C /* utils.swift in Sources */,
 				CADFCB2AFE273C7094297C60 /* WebViewCache.swift in Sources */,
 				CADFCC6C4F731C90DFC4F025 /* GifSearcher.swift in Sources */,
+				CADFC59F9A112C572B984136 /* HTMLFileGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,6 +5,8 @@ import Foundation
 import WebKit
 
 
+public let Workflow = Alfred.workflow(id: "mr.pennyworth.gif")!
+
 class GifDraggerWebView: WKWebView, NSDraggingSource {
   var selectedGif: URL!
 

@@ -13,6 +13,7 @@
 		D03EA8D725551E0700D3656E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D03EA8D625551E0700D3656E /* Assets.xcassets */; };
 		D03EA8FA255567A300D3656E /* AlfredWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03EA8F9255567A300D3656E /* AlfredWatcher.swift */; };
 		D04F70D5255893B3008E17A4 /* NSColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04F70D4255893B3008E17A4 /* NSColorExtension.swift */; };
+		D0537E57265F795C00C55C71 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D0537E56265F795B00C55C71 /* Alamofire */; };
 		D078D375265E3DE60019BAE2 /* Alfred in Frameworks */ = {isa = PBXBuildFile; productRef = D078D374265E3DE60019BAE2 /* Alfred */; };
 		D0E43DFB265CB0330016375D /* FileWatcher in Frameworks */ = {isa = PBXBuildFile; productRef = D0E43DFA265CB0330016375D /* FileWatcher */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0537E57265F795C00C55C71 /* Alamofire in Frameworks */,
 				D078D375265E3DE60019BAE2 /* Alfred in Frameworks */,
 				D0E43DFB265CB0330016375D /* FileWatcher in Frameworks */,
 			);
@@ -112,6 +114,7 @@
 			packageProductDependencies = (
 				D0E43DFA265CB0330016375D /* FileWatcher */,
 				D078D374265E3DE60019BAE2 /* Alfred */,
+				D0537E56265F795B00C55C71 /* Alamofire */,
 			);
 			productName = AlfredGifBrowser;
 			productReference = D03EA8CF25551E0400D3656E /* AlfredGifBrowser.app */;
@@ -144,6 +147,7 @@
 			packageReferences = (
 				D0E43DF9265CB0330016375D /* XCRemoteSwiftPackageReference "FileWatcher" */,
 				D078D373265E3DE60019BAE2 /* XCRemoteSwiftPackageReference "AlfredSwift" */,
+				D0537E55265F795B00C55C71 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = D03EA8D025551E0400D3656E /* Products */;
 			projectDirPath = "";
@@ -361,6 +365,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D0537E55265F795B00C55C71 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
 		D078D373265E3DE60019BAE2 /* XCRemoteSwiftPackageReference "AlfredSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mr-pennyworth/AlfredSwift";
@@ -380,6 +392,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D0537E56265F795B00C55C71 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0537E55265F795B00C55C71 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		D078D374265E3DE60019BAE2 /* Alfred */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D078D373265E3DE60019BAE2 /* XCRemoteSwiftPackageReference "AlfredSwift" */;

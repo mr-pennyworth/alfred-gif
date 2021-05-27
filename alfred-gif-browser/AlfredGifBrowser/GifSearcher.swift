@@ -61,7 +61,9 @@ struct Tenor {
     if let resp: Response = response.value {
       let gifs: [Gif] = resp.results.map { result in
         let url = result.media_formats[format]!.url
-        let title = result.h1_title ?? makeTitle(from: url)
+        let title =
+          (result.h1_title ?? makeTitle(from: url))
+            .deleting(pattern: "( GIF| Sticker)")
         log("\(url)")
         return Gif(webURL: url, title: title)
       }

@@ -12,7 +12,7 @@ struct Gif {
   let title: String
 }
 
-class Tenor {
+struct Tenor {
   // Impersonate gboard
   static let url = "https://tenor.googleapis.com/v2/search"
   static let commonParams: [String: Codable] = [
@@ -30,12 +30,10 @@ class Tenor {
       "media_filter": format,
       "q": query,
     ]
-    AF.request(url, parameters: params).responseData { resp in
-      log("Query URL: \(resp.request!.url!)")
-      if let json = resp.data?.asJsonObj() {
-        parseJson(json: json, format: format, then: callback)
+    AF.request(url, parameters: params)
+      .responseDecodable(of: Response.self) { response in
+        parse(response, format: format, then: callback)
       }
-    }
   }
 
   static func searchStickers(
@@ -48,37 +46,51 @@ class Tenor {
       "media_filter": format,
       "q": query,
     ]
-    AF.request(url, parameters: params).responseData { resp in
-      log("Query URL: \(resp.request!.url!)")
-      if let json = resp.data?.asJsonObj() {
-        parseJson(json: json, format: format, then: callback)
+    AF.request(url, parameters: params)
+      .responseDecodable(of: Response.self) { response in
+        parse(response, format: format, then: callback)
       }
+  }
+
+  static func parse(
+    _ response: DataResponse<Response, AFError>,
+    format: String,
+    then callback: @escaping (GifSearchResult) -> ()
+  ) {
+    log("Query URL: \(response.request!.url!)")
+    if let resp: Response = response.value {
+      let gifs: [Gif] = resp.results.map { result in
+        let url = result.media_formats[format]!.url
+        let title = result.h1_title ?? makeTitle(from: url)
+        log("\(url)")
+        return Gif(webURL: url, title: title)
+      }
+      callback(GifSearchResult(credits: "Powered by Tenor", gifs: gifs))
+    } else {
+      log("Error: couldn't parse: \(response)")
     }
   }
 
-  static func parseJson(
-    json: [String: Any],
-    format: String,
-    then: (GifSearchResult) -> ()
-  ) {
-    let gifs: [Gif] =
-      (json["results"] as! [[String: Any]])
-        .map { $0["media_formats"] as! [String: Any] }
-        .map { $0[format] as! [String: Any] }
-        .map { $0["url"] as! String }
-        .map { url in
-          let webURL = URL(string: url)!
-          let title: String =
-            url
-              .split(separator: "/").last!
-              .split(separator: ".")[0]
-              .split(separator: "-")
-              .map(\.capitalized)
-              .joined(separator: " ")
-          log("\(url)")
-          return Gif(webURL: webURL, title: title)
-        }
-    then(GifSearchResult(credits: "Powered by Tenor", gifs: gifs))
+  static func makeTitle(from url: URL) -> String {
+    url.path
+      .split(separator: "/").last!
+      .split(separator: ".")[0]
+      .split(separator: "-")
+      .map(\.capitalized)
+      .joined(separator: " ")
+  }
+
+  struct Response: Codable {
+    var results: [Result]
+
+    struct Result: Codable {
+      var h1_title: String?
+      var media_formats: [String: Item]
+
+      struct Item: Codable {
+        var url: URL
+      }
+    }
   }
 }
 

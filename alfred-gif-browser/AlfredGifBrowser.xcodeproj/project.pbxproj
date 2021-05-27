@@ -377,8 +377,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mr-pennyworth/AlfredSwift";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.4;
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.0.6;
 			};
 		};
 		D0E43DF9265CB0330016375D /* XCRemoteSwiftPackageReference "FileWatcher" */ = {

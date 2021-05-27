@@ -2,6 +2,8 @@ import Alamofire
 import Alfred
 import Foundation
 
+let Limit = 50
+
 struct GifSearchResult {
   let credits: String
   let gifs: [Gif]
@@ -18,7 +20,7 @@ struct Tenor {
   static let commonParams: [String: Codable] = [
     "key": "AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ",
     "client_key": "gboard",
-    "limit": 50,
+    "limit": Limit,
   ]
 
   static func search(
@@ -96,6 +98,71 @@ struct Tenor {
   }
 }
 
+
+class Giphy {
+  var key: String
+  init(key: String) {
+    self.key = key
+  }
+
+  func search(
+    query: String,
+    then callback: @escaping (GifSearchResult) -> ()
+  ) {
+    search(query, "gif", then: callback)
+  }
+
+  func searchStickers(
+    query: String,
+    then callback: @escaping (GifSearchResult) -> ()
+  ) {
+    search(query, "sticker", then: callback)
+  }
+
+  private func search(
+    _ query: String,
+    _ type: String,
+    then callback: @escaping (GifSearchResult) -> ()
+  ) {
+    let url = "https://api.giphy.com/v1/\(type)s/search"
+    let params: [String: Codable] = [
+      "api_key": key,
+      "limit": Limit,
+      "q": query,
+    ]
+    AF.request(url, parameters: params)
+      .responseDecodable(of: Response.self) { response in
+        self.parse(response, then: callback)
+      }
+  }
+
+  func parse(
+    _ response: DataResponse<Response, AFError>,
+    then callback: @escaping (GifSearchResult) -> ()
+  ) {
+    log("Query URL: \(response.request!.url!)")
+    if let resp: Response = response.value {
+      let gifs: [Gif] = resp.data.map { result in
+        let url = URL(string: "https://i.giphy.com/\(result.id).gif")!
+        log("\(url)")
+        return Gif(webURL: url, title: result.title)
+      }
+      callback(GifSearchResult(credits: "Powered by GIPHY", gifs: gifs))
+    } else {
+      log("Error: couldn't parse: \(response)")
+    }
+  }
+
+  struct Response: Codable {
+    var data: [Item]
+
+    struct Item: Codable {
+      var title: String
+      var type: String
+      var id: String
+    }
+  }
+}
 
 /// Merge two dicts with the right one
 /// taking precedence in case of key collision

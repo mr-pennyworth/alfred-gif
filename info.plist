@@ -8,6 +8,19 @@
 	<string>Internet</string>
 	<key>connections</key>
 	<dict>
+		<key>03C7C6F3-667D-4202-8959-8C2EC1434CE4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7D7C5CC9-318C-4930-A2A3-DC5FAF43D36A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>14696DC3-6EA6-4025-8A09-1583D7926BEF</key>
 		<array>
 			<dict>
@@ -73,11 +86,106 @@
 				<false/>
 			</dict>
 		</array>
+		<key>42AB22DF-7352-400F-A598-DA44263C07E3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D7E53F09-CEAC-4F18-B467-2B942D8CB1BE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>43890837-AB17-4D11-A025-3819E60C6A80</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6513E0A0-09E2-4013-973B-37BCFDAB5668</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>51DDAEAB-2F61-4FF7-BE64-FF10F9E7BAF9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7945D533-5F26-4253-BC38-D5D76885BE85</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>5FD17AF0-4A40-4447-B0C4-D09A2927D9C9</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>1F55B002-55D8-4A4F-AD72-A1E2854DEAB0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6513E0A0-09E2-4013-973B-37BCFDAB5668</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>51DDAEAB-2F61-4FF7-BE64-FF10F9E7BAF9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F14AE295-82A7-4046-800E-33254DC9D63A</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>↩/click: copy GIF to clipboard</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D7905CE4-4061-4CE1-96CD-4B525C310862</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>↩/click: copy URL to clipboard</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>8B1C8011-9DCE-4232-843A-7A2E2457FFA8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
+		<key>6A110211-0519-4DAE-805D-7FA64061787B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6513E0A0-09E2-4013-973B-37BCFDAB5668</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -99,11 +207,76 @@
 				<false/>
 			</dict>
 		</array>
+		<key>7945D533-5F26-4253-BC38-D5D76885BE85</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8F01A28D-3528-4E9F-AF58-8EF5F80B1F99</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7D7C5CC9-318C-4930-A2A3-DC5FAF43D36A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BAC7DB23-3DD8-4890-998D-A5A6B47F8D37</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>87F5188E-6D7C-4B25-88AF-42F674F3C9D4</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>B9741F37-05A5-4DB4-87C0-2848655113DF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8B1C8011-9DCE-4232-843A-7A2E2457FFA8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7945D533-5F26-4253-BC38-D5D76885BE85</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>9B5A3C84-BF43-4F01-B360-CD669C2E40D6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>43890837-AB17-4D11-A025-3819E60C6A80</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A9E86A5C-E95B-460F-AFA7-6A1723B3BD39</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CDF386CB-0914-48EE-9C9D-7FA72CEF53FD</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -220,6 +393,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>CDF386CB-0914-48EE-9C9D-7FA72CEF53FD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D7E53F09-CEAC-4F18-B467-2B942D8CB1BE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>D09D266A-FCE8-4386-9CFD-222EED5E2CDF</key>
 		<array>
 			<dict>
@@ -235,6 +421,49 @@
 		</array>
 		<key>D4DF06DF-EE49-4403-8203-81CE3DFB5421</key>
 		<array/>
+		<key>D7E53F09-CEAC-4F18-B467-2B942D8CB1BE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F4B85715-5DD9-4C5E-AA8D-04A3633123D7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>567117B8-DB45-4157-9CDF-3217C01F3267</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>↩/click: copy GIF to clipboard</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>66CA435A-0A58-44BC-91F2-29101242494D</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>↩/click: copy URL to clipboard</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>03C7C6F3-667D-4202-8959-8C2EC1434CE4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
 		<key>E4949A54-F834-48EA-A3C4-7BC188770BFD</key>
 		<array>
 			<dict>
@@ -291,17 +520,123 @@
 				<true/>
 			</dict>
 		</array>
+		<key>F4B85715-5DD9-4C5E-AA8D-04A3633123D7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7D7C5CC9-318C-4930-A2A3-DC5FAF43D36A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Mr. Pennyworth</string>
 	<key>description</key>
-	<string>Search Tenor for GIFs</string>
+	<string>Search Tenor and Giphy for GIFs</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
 	<string>GIF Search</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query="$(cat /tmp/alfred-gif-query)"
+
+function is_gif_browser_up() {
+  pgrep AlfredGifBrowser &gt; /dev/null
+}
+
+function start_gif_browser() {
+  open ./AlfredGifBrowser.app
+}
+
+if ! is_gif_browser_up;
+then
+  start_gif_browser
+  cat &lt;&lt; EOF
+{"items": [
+  {"title": "Press enter again to search for \"$query\"",
+   "subtitle": "double-enter is needed for the first search",
+   "arg": "$query"}]}
+EOF
+else
+curl -s -G 'http://localhost:9911/' \
+  --data-urlencode "query=$query" \
+  --data-urlencode "service=giphy" \
+  --data-urlencode "key=$giphy_key"
+fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F4B85715-5DD9-4C5E-AA8D-04A3633123D7</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>cat /tmp/alfred-gif-query</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B8C01511-85B8-4066-AABE-C1C2AB44EECD</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>cat /tmp/alfred-gif-query</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>CDF386CB-0914-48EE-9C9D-7FA72CEF53FD</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -349,33 +684,31 @@ fi</string>
 			<integer>2</integer>
 		</dict>
 		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>cat /tmp/alfred-gif-query</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.hidealfred</string>
 			<key>uid</key>
-			<string>B8C01511-85B8-4066-AABE-C1C2AB44EECD</string>
+			<string>567117B8-DB45-4157-9CDF-3217C01F3267</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.hidealfred</string>
 			<key>uid</key>
 			<string>86EA3074-481A-4484-B4A4-DC0EB428CB59</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>giphystart</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>A9E86A5C-E95B-460F-AFA7-6A1723B3BD39</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -397,6 +730,97 @@ fi</string>
 			<string>44CDD528-D545-44E4-ACBC-EB111433B1B0</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>giphystart</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>BAC7DB23-3DD8-4890-998D-A5A6B47F8D37</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>giphy</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>query=$1
+
+echo -n "$query" &gt; /tmp/alfred-gif-query
+
+if [[ -z "$result_json" ]]; then
+
+cat &lt;&lt; EOF
+{"items": [
+  {"title": "Search Giphy for \"$query\" GIFs",
+   "subtitle": "↩: search",
+   "arg": "$query"}]}
+EOF
+
+else
+  
+  echo "$result_json"
+
+fi
+
+histpath="$HOME/Library/Application Support/Alfred/Workflow Data/mr.pennyworth.AlfredHistorySearch/query-history.txt"
+if [[ -f "$histpath" ]]; then
+    echo "$(date +%s) giphy $1" &gt;&gt; "$histpath"
+fi
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>type query and press ↩</string>
+				<key>title</key>
+				<string>Search Giphy for GIFs</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D7E53F09-CEAC-4F18-B467-2B942D8CB1BE</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -447,7 +871,7 @@ if [[ -z "$result_json" ]]; then
 
 cat &lt;&lt; EOF
 {"items": [
-  {"title": "Search Tenor for \"$query\"",
+  {"title": "Search Tenor for \"$query\" GIFs",
    "subtitle": "↩: search",
    "arg": "$query"}]}
 EOF
@@ -499,7 +923,35 @@ fi
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
+			<string>7D7C5CC9-318C-4930-A2A3-DC5FAF43D36A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>result_json</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
 			<string>B8DB0D76-82FB-456D-94F3-DAFC50B58258</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.hidealfred</string>
+			<key>uid</key>
+			<string>66CA435A-0A58-44BC-91F2-29101242494D</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -510,6 +962,37 @@ fi
 			<string>5146AE95-246C-4941-97B6-5BB50046732D</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>42AB22DF-7352-400F-A598-DA44263C07E3</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -572,6 +1055,105 @@ EOF</string>
 			<string>B7BF0458-29EB-4FDB-9B1E-422BCAB10091</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query="$(cat /tmp/alfred-gif-query)"
+
+cat &lt;&lt; EOF
+{"items": [
+  {"title": "Searching for \"$query\"...",
+   "subtitle": "Loading...",
+   "arg": "$query",
+   "valid": false}]}
+EOF</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>03C7C6F3-667D-4202-8959-8C2EC1434CE4</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>.gif-clear-cached-searches</string>
+				<key>subtext</key>
+				<string>.gif-clear-cached-searches</string>
+				<key>text</key>
+				<string>Clear Cached GIF Searches</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>766E1508-18B9-4AEA-829D-410A0A6596B1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+cd "$alfred_workflow_cache"
+rm *.html</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>D4DF06DF-EE49-4403-8203-81CE3DFB5421</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>.setup-gif-search</string>
+				<key>subtext</key>
+				<string>.setup-gif-search</string>
+				<key>text</key>
+				<string>Setup GIF Search</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>5FD17AF0-4A40-4447-B0C4-D09A2927D9C9</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -652,57 +1234,12 @@ killall AlfredGifBrowser</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>.setup-gif-search</string>
-				<key>subtext</key>
-				<string>.setup-gif-search</string>
-				<key>text</key>
-				<string>Setup GIF Search</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>5FD17AF0-4A40-4447-B0C4-D09A2927D9C9</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>.gif-clear-cached-searches</string>
-				<key>subtext</key>
-				<string>.gif-clear-cached-searches</string>
-				<key>text</key>
-				<string>Clear Cached GIF Searches</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>766E1508-18B9-4AEA-829D-410A0A6596B1</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>#!/bin/bash
-
-cd "$alfred_workflow_cache"
-rm *.html</string>
+				<string>cat /tmp/alfred-gif-query</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -713,7 +1250,30 @@ rm *.html</string>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>D4DF06DF-EE49-4403-8203-81CE3DFB5421</string>
+			<string>43890837-AB17-4D11-A025-3819E60C6A80</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>cat /tmp/alfred-gif-query</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>87F5188E-6D7C-4B25-88AF-42F674F3C9D4</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -747,7 +1307,54 @@ EOF
 else
 curl -s -G 'http://localhost:9911/' \
   --data-urlencode "query=$query" \
-  --data-urlencode "service=sticker"
+  --data-urlencode "service=giphy_sticker" \
+  --data-urlencode "key=$giphy_key"
+fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>51DDAEAB-2F61-4FF7-BE64-FF10F9E7BAF9</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query="$(cat /tmp/alfred-gif-query)"
+
+function is_gif_browser_up() {
+  pgrep AlfredGifBrowser &gt; /dev/null
+}
+
+function start_gif_browser() {
+  ./AlfredGifBrowser.app/Contents/MacOS/AlfredGifBrowser &gt; /tmp/gif-browser.log 2&gt;&amp;1 &amp;
+}
+
+if ! is_gif_browser_up;
+then
+  start_gif_browser
+  cat &lt;&lt; EOF
+{"items": [
+  {"title": "Press enter again to search for \"$query\"",
+   "subtitle": "double-enter is needed for the first search",
+   "arg": "$query"}]}
+EOF
+else
+curl -s -G 'http://localhost:9911/' \
+  --data-urlencode "query=$query" \
+  --data-urlencode "service=tenor_sticker"
 fi</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -764,33 +1371,18 @@ fi</string>
 			<integer>2</integer>
 		</dict>
 		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>cat /tmp/alfred-gif-query</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.hidealfred</string>
 			<key>uid</key>
-			<string>87F5188E-6D7C-4B25-88AF-42F674F3C9D4</string>
+			<string>527461B2-1F40-4AD8-8AB8-09140BE957A4</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.hidealfred</string>
 			<key>uid</key>
-			<string>527461B2-1F40-4AD8-8AB8-09140BE957A4</string>
+			<string>F14AE295-82A7-4046-800E-33254DC9D63A</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -810,6 +1402,25 @@ fi</string>
 			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
 			<string>F0E83D63-580F-4C6F-A25A-5DEE91A0B9BF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>giphystickerstart</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>8F01A28D-3528-4E9F-AF58-8EF5F80B1F99</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -849,7 +1460,7 @@ if [[ -z "$result_json" ]]; then
 
 cat &lt;&lt; EOF
 {"items": [
-  {"title": "Search Tenor for \"$query\"",
+  {"title": "Search Tenor for \"$query\" Stickers",
    "subtitle": "↩: search",
    "arg": "$query"}]}
 EOF
@@ -872,7 +1483,7 @@ fi
 				<key>subtext</key>
 				<string>type query and press ↩</string>
 				<key>title</key>
-				<string>Search Tenor for Gboard Stickers</string>
+				<string>Search Tenor for Stickers</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -884,6 +1495,91 @@ fi
 			<string>B9741F37-05A5-4DB4-87C0-2848655113DF</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>gsticker</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>query=$1
+
+echo -n "$query" &gt; /tmp/alfred-gif-query
+
+if [[ -z "$result_json" ]]; then
+
+cat &lt;&lt; EOF
+{"items": [
+  {"title": "Search Giphy for \"$query\" Stickers",
+   "subtitle": "↩: search",
+   "arg": "$query"}]}
+EOF
+
+else
+  
+  echo "$result_json"
+
+fi
+
+histpath="$HOME/Library/Application Support/Alfred/Workflow Data/mr.pennyworth.AlfredHistorySearch/query-history.txt"
+if [[ -f "$histpath" ]]; then
+    echo "$(date +%s) gsticker $1" &gt;&gt; "$histpath"
+fi
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>type query and press ↩</string>
+				<key>title</key>
+				<string>Search Giphy for Stickers</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6513E0A0-09E2-4013-973B-37BCFDAB5668</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>giphystickerstart</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>9B5A3C84-BF43-4F01-B360-CD669C2E40D6</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -914,6 +1610,26 @@ fi
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
+			<string>7945D533-5F26-4253-BC38-D5D76885BE85</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>result_json</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
 			<string>3F3DF914-DE29-4774-801E-8DFE1C48A124</string>
 			<key>version</key>
 			<integer>1</integer>
@@ -923,6 +1639,14 @@ fi
 			<string>alfred.workflow.utility.hidealfred</string>
 			<key>uid</key>
 			<string>DCF44407-BDD7-4AB4-AEB7-23BA3FF37A28</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.hidealfred</string>
+			<key>uid</key>
+			<string>D7905CE4-4061-4CE1-96CD-4B525C310862</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -969,11 +1693,42 @@ EOF</string>
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>32</integer>
+				<integer>0</integer>
 				<key>hotmod</key>
-				<integer>1835008</integer>
+				<integer>0</integer>
 				<key>hotstring</key>
-				<string>G</string>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>6A110211-0519-4DAE-805D-7FA64061787B</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -988,11 +1743,51 @@ EOF</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query="$(cat /tmp/alfred-gif-query)"
+
+cat &lt;&lt; EOF
+{"items": [
+  {"title": "Searching for \"$query\"...",
+   "subtitle": "Loading...",
+   "arg": "$query",
+   "valid": false}]}
+EOF</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8B1C8011-9DCE-4232-843A-7A2E2457FFA8</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>03C7C6F3-667D-4202-8959-8C2EC1434CE4</key>
+		<dict>
+			<key>note</key>
+			<string>Show "Searching..."</string>
+			<key>xpos</key>
+			<integer>1545</integer>
+			<key>ypos</key>
+			<integer>270</integer>
+		</dict>
 		<key>14696DC3-6EA6-4025-8A09-1583D7926BEF</key>
 		<dict>
 			<key>note</key>
@@ -1000,21 +1795,20 @@ EOF</string>
 			<key>xpos</key>
 			<integer>555</integer>
 			<key>ypos</key>
-			<integer>1000</integer>
+			<integer>845</integer>
 		</dict>
 		<key>1A966A24-354B-4D9D-B4BC-253DE27A75B6</key>
 		<dict>
 			<key>xpos</key>
 			<integer>555</integer>
 			<key>ypos</key>
-			<integer>740</integer>
+			<integer>585</integer>
 		</dict>
 		<key>1F55B002-55D8-4A4F-AD72-A1E2854DEAB0</key>
 		<dict>
 			<key>note</key>
 			<string>- de-quarantine
-- grant permissions
-- start downloader</string>
+- grant permissions</string>
 			<key>xpos</key>
 			<integer>365</integer>
 			<key>ypos</key>
@@ -1039,7 +1833,21 @@ EOF</string>
 			<key>xpos</key>
 			<integer>745</integer>
 			<key>ypos</key>
-			<integer>900</integer>
+			<integer>745</integer>
+		</dict>
+		<key>42AB22DF-7352-400F-A598-DA44263C07E3</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1175</integer>
+			<key>ypos</key>
+			<integer>270</integer>
+		</dict>
+		<key>43890837-AB17-4D11-A025-3819E60C6A80</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1175</integer>
+			<key>ypos</key>
+			<integer>585</integer>
 		</dict>
 		<key>44CDD528-D545-44E4-ACBC-EB111433B1B0</key>
 		<dict>
@@ -1055,12 +1863,26 @@ EOF</string>
 			<key>ypos</key>
 			<integer>225</integer>
 		</dict>
+		<key>51DDAEAB-2F61-4FF7-BE64-FF10F9E7BAF9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1545</integer>
+			<key>ypos</key>
+			<integer>585</integer>
+		</dict>
 		<key>527461B2-1F40-4AD8-8AB8-09140BE957A4</key>
 		<dict>
 			<key>xpos</key>
 			<integer>595</integer>
 			<key>ypos</key>
-			<integer>845</integer>
+			<integer>690</integer>
+		</dict>
+		<key>567117B8-DB45-4157-9CDF-3217C01F3267</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1585</integer>
+			<key>ypos</key>
+			<integer>115</integer>
 		</dict>
 		<key>5FD17AF0-4A40-4447-B0C4-D09A2927D9C9</key>
 		<dict>
@@ -1069,12 +1891,47 @@ EOF</string>
 			<key>ypos</key>
 			<integer>420</integer>
 		</dict>
+		<key>6513E0A0-09E2-4013-973B-37BCFDAB5668</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1355</integer>
+			<key>ypos</key>
+			<integer>715</integer>
+		</dict>
+		<key>66CA435A-0A58-44BC-91F2-29101242494D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1585</integer>
+			<key>ypos</key>
+			<integer>225</integer>
+		</dict>
+		<key>6A110211-0519-4DAE-805D-7FA64061787B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1175</integer>
+			<key>ypos</key>
+			<integer>845</integer>
+		</dict>
 		<key>766E1508-18B9-4AEA-829D-410A0A6596B1</key>
 		<dict>
 			<key>xpos</key>
-			<integer>185</integer>
+			<integer>1175</integer>
 			<key>ypos</key>
-			<integer>585</integer>
+			<integer>415</integer>
+		</dict>
+		<key>7945D533-5F26-4253-BC38-D5D76885BE85</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1735</integer>
+			<key>ypos</key>
+			<integer>745</integer>
+		</dict>
+		<key>7D7C5CC9-318C-4930-A2A3-DC5FAF43D36A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1735</integer>
+			<key>ypos</key>
+			<integer>170</integer>
 		</dict>
 		<key>86EA3074-481A-4484-B4A4-DC0EB428CB59</key>
 		<dict>
@@ -1088,14 +1945,44 @@ EOF</string>
 			<key>xpos</key>
 			<integer>185</integer>
 			<key>ypos</key>
-			<integer>740</integer>
+			<integer>585</integer>
+		</dict>
+		<key>8B1C8011-9DCE-4232-843A-7A2E2457FFA8</key>
+		<dict>
+			<key>note</key>
+			<string>Show "Searching..."</string>
+			<key>xpos</key>
+			<integer>1545</integer>
+			<key>ypos</key>
+			<integer>845</integer>
+		</dict>
+		<key>8F01A28D-3528-4E9F-AF58-8EF5F80B1F99</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1790</integer>
+			<key>ypos</key>
+			<integer>715</integer>
+		</dict>
+		<key>9B5A3C84-BF43-4F01-B360-CD669C2E40D6</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1000</integer>
+			<key>ypos</key>
+			<integer>715</integer>
+		</dict>
+		<key>A9E86A5C-E95B-460F-AFA7-6A1723B3BD39</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1000</integer>
+			<key>ypos</key>
+			<integer>140</integer>
 		</dict>
 		<key>B0E88D92-E353-4B44-A933-DA7C08A377F5</key>
 		<dict>
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
-			<integer>870</integer>
+			<integer>715</integer>
 		</dict>
 		<key>B7BF0458-29EB-4FDB-9B1E-422BCAB10091</key>
 		<dict>
@@ -1123,14 +2010,28 @@ EOF</string>
 			<key>xpos</key>
 			<integer>365</integer>
 			<key>ypos</key>
-			<integer>870</integer>
+			<integer>715</integer>
+		</dict>
+		<key>BAC7DB23-3DD8-4890-998D-A5A6B47F8D37</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1790</integer>
+			<key>ypos</key>
+			<integer>140</integer>
 		</dict>
 		<key>C9B6A67D-01E0-402D-B377-D7E2FE47F4D7</key>
 		<dict>
 			<key>xpos</key>
 			<integer>185</integer>
 			<key>ypos</key>
-			<integer>1000</integer>
+			<integer>845</integer>
+		</dict>
+		<key>CDF386CB-0914-48EE-9C9D-7FA72CEF53FD</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1175</integer>
+			<key>ypos</key>
+			<integer>10</integer>
 		</dict>
 		<key>D09D266A-FCE8-4386-9CFD-222EED5E2CDF</key>
 		<dict>
@@ -1146,16 +2047,30 @@ EOF</string>
 			<key>note</key>
 			<string>rm *.html</string>
 			<key>xpos</key>
-			<integer>555</integer>
+			<integer>1545</integer>
 			<key>ypos</key>
-			<integer>585</integer>
+			<integer>415</integer>
+		</dict>
+		<key>D7905CE4-4061-4CE1-96CD-4B525C310862</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1585</integer>
+			<key>ypos</key>
+			<integer>800</integer>
+		</dict>
+		<key>D7E53F09-CEAC-4F18-B467-2B942D8CB1BE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1355</integer>
+			<key>ypos</key>
+			<integer>140</integer>
 		</dict>
 		<key>DCF44407-BDD7-4AB4-AEB7-23BA3FF37A28</key>
 		<dict>
 			<key>xpos</key>
 			<integer>595</integer>
 			<key>ypos</key>
-			<integer>955</integer>
+			<integer>800</integer>
 		</dict>
 		<key>E4949A54-F834-48EA-A3C4-7BC188770BFD</key>
 		<dict>
@@ -1176,11 +2091,34 @@ EOF</string>
 			<key>xpos</key>
 			<integer>800</integer>
 			<key>ypos</key>
-			<integer>870</integer>
+			<integer>715</integer>
+		</dict>
+		<key>F14AE295-82A7-4046-800E-33254DC9D63A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1585</integer>
+			<key>ypos</key>
+			<integer>690</integer>
+		</dict>
+		<key>F4B85715-5DD9-4C5E-AA8D-04A3633123D7</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1545</integer>
+			<key>ypos</key>
+			<integer>10</integer>
 		</dict>
 	</dict>
+	<key>variables</key>
+	<dict>
+		<key>giphy_key</key>
+		<string>Gc7131jiJuvI7IdN0HZ1D7nh0ow5BU6g</string>
+	</dict>
+	<key>variablesdontexport</key>
+	<array>
+		<string>giphy_key</string>
+	</array>
 	<key>version</key>
-	<string>0.3.0</string>
+	<string>0.3.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/mr-pennyworth/alfred-gif</string>
 </dict>

@@ -12,7 +12,9 @@ XCPROJ = 'alfred-gif-browser/AlfredGifBrowser.xcodeproj/project.pbxproj'
 BUILD_DIR = 'wfbuild'
 WF_FILES = [
   'AlfredGifBrowser.app',
+  '6513E0A0-09E2-4013-973B-37BCFDAB5668.png',
   'B9741F37-05A5-4DB4-87C0-2848655113DF.png',
+  'D7E53F09-CEAC-4F18-B467-2B942D8CB1BE.png',
   'icon.png',
   'info.plist',
   'README.md',

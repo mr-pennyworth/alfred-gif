@@ -5,7 +5,7 @@
 </a><br/><br/>
 
 Search for GIFs and animated stickers on [Tenor](https://tenor.com)
-from [Alfred](https://alfredapp.com).
+and [Giphy](https://giphy.com) from [Alfred](https://alfredapp.com).
 
 Here's an example of searching and inserting a GIF in a google doc:
 ![](demo-media/alfred-gif-search-with-drag-thumbnail.gif)
@@ -18,8 +18,16 @@ a transparent background. Here's an example of how animated stickers look like:<
 1. Download the [latest release](https://github.com/mr-pennyworth/alfred-gif/releases/latest/download/GIF.Search.alfredworkflow).
 2. In Alfred, run `.setup-gif-search`.
 
+### Giphy Setup
+- To search Giphy, you first need to [obtain a (free) API key](https://developers.giphy.com/docs/api#quick-start-guide).
+- Set the API key as a [workflow variable](https://www.alfredapp.com/help/workflows/advanced/variables/#environment) named `giphy_key`.
+
 ### Usage
-- In Alfred, enter `gif` or `sticker` keyword followed by search query.
+- In Alfred, one of the following keywords followed by search query:
+  - `gif`: search Tenor for GIFs
+  - `giphy`: search Giphy for GIFs
+  - `sticker`: search Tenor for stickers
+  - `gsticker`: search Giphy for stickers
 - Press `↩`.
 - Use arrow keys or mouse to browse the GIFs.
 - To copy the selected GIF to clipboard:

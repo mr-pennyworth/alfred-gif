@@ -5,6 +5,7 @@ import Foundation
 import WebKit
 
 
+public let Port = 9911
 public let Workflow = Alfred.workflow(id: "mr.pennyworth.gif")!
 
 class GifDraggerWebView: WKWebView, NSDraggingSource {
@@ -60,6 +61,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   var url: URL? = nil
 
   let alfredWatcher: AlfredWatcher = AlfredWatcher()
+  lazy var workflowServer: GifWorkflowServer = {
+    GifWorkflowServer(port: Port, callback: self.setUrl)
+  }()
 
   lazy var window: NSWindow = {
     let window = NSWindow(
@@ -100,8 +104,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     return webview
   }()
 
-  func setUrl(_ path: String) {
-    url = URL(fileURLWithPath: path)
+  func setUrl(_ htmlPath: URL) {
+    url = htmlPath
     render()
   }
 
@@ -168,6 +172,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       onLeftArrowPressed: makeBrowseFunction("left"),
       setAlfredFrame: { self.alfredFrame = $0 }
     )
+    workflowServer.start()
   }
 
   func gifWithUrlChosen(_ gifUrl: String) {
@@ -252,19 +257,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       showWindow(alfred: alfredFrame)
     } else {
       window.orderOut(self)
-    }
-  }
-
-  func application(_ application: NSApplication, open urls: [URL]) {
-    for url in urls {
-      log("\(url)")
-      let param = url.queryParameters
-      switch url.host {
-      case "update":
-        setUrl(param["gifHtml"]!)
-      default:
-        break
-      }
     }
   }
 }

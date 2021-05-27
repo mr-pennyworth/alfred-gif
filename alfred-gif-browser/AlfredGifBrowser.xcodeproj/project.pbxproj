@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CADFC192ACAA40EE22661537 /* GifWorkflowServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFCB9765A95143919D9F35 /* GifWorkflowServer.swift */; };
 		CADFC59F9A112C572B984136 /* HTMLFileGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFC270AD9E1A21B11C7B32 /* HTMLFileGenerator.swift */; };
 		CADFCB2AFE273C7094297C60 /* WebViewCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFCA7AFF9CEC408F515ED8 /* WebViewCache.swift */; };
 		CADFCC6C4F731C90DFC4F025 /* GifSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADFC28AEB7498824B377D00 /* GifSearcher.swift */; };
@@ -37,6 +38,7 @@
 		CADFC270AD9E1A21B11C7B32 /* HTMLFileGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLFileGenerator.swift; sourceTree = "<group>"; };
 		CADFC28AEB7498824B377D00 /* GifSearcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifSearcher.swift; sourceTree = "<group>"; };
 		CADFCA7AFF9CEC408F515ED8 /* WebViewCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewCache.swift; sourceTree = "<group>"; };
+		CADFCB9765A95143919D9F35 /* GifWorkflowServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifWorkflowServer.swift; sourceTree = "<group>"; };
 		D01646B9255AF27A00646F0C /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		D03EA8CF25551E0400D3656E /* AlfredGifBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlfredGifBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03EA8D225551E0400D3656E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				CADFCA7AFF9CEC408F515ED8 /* WebViewCache.swift */,
 				CADFC28AEB7498824B377D00 /* GifSearcher.swift */,
 				CADFC270AD9E1A21B11C7B32 /* HTMLFileGenerator.swift */,
+				CADFCB9765A95143919D9F35 /* GifWorkflowServer.swift */,
 			);
 			path = AlfredGifBrowser;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				CADFCB2AFE273C7094297C60 /* WebViewCache.swift in Sources */,
 				CADFCC6C4F731C90DFC4F025 /* GifSearcher.swift in Sources */,
 				CADFC59F9A112C572B984136 /* HTMLFileGenerator.swift in Sources */,
+				CADFC192ACAA40EE22661537 /* GifWorkflowServer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +323,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.3.0;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = mr.pennyworth.AlfredGifBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -340,7 +344,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.3.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = mr.pennyworth.AlfredGifBrowser;
@@ -386,7 +390,7 @@
 			repositoryURL = "https://github.com/mr-pennyworth/AlfredSwift";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.0.6;
+				minimumVersion = 0.0.8;
 			};
 		};
 		D0E43DF9265CB0330016375D /* XCRemoteSwiftPackageReference "FileWatcher" */ = {

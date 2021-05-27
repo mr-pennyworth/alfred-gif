@@ -8,19 +8,6 @@
 	<string>Internet</string>
 	<key>connections</key>
 	<dict>
-		<key>12246986-CCD9-4CFB-A388-6780118E8073</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>91DD521D-37E0-45D1-9DD1-3FE2C7A0D936</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>14696DC3-6EA6-4025-8A09-1583D7926BEF</key>
 		<array>
 			<dict>
@@ -325,14 +312,6 @@
 				<key>script</key>
 				<string>query="$(cat /tmp/alfred-gif-query)"
 
-function is_server_up() {
-  pgrep gif-downloader.bin &gt; /dev/null
-}
-
-function start_server() {
-  ./gif-downloader.bin &gt; /tmp/alfred-gif-search.log 2&gt;&amp;1 &amp; 
-}
-
 function is_gif_browser_up() {
   pgrep AlfredGifBrowser &gt; /dev/null
 }
@@ -340,10 +319,6 @@ function is_gif_browser_up() {
 function start_gif_browser() {
   open ./AlfredGifBrowser.app
 }
-
-if ! is_server_up; then
-  start_server
-fi
 
 if ! is_gif_browser_up;
 then
@@ -355,8 +330,9 @@ then
    "arg": "$query"}]}
 EOF
 else
-curl -s -G 'http://localhost:8910/' \
-  --data-urlencode "query=$query"
+curl -s -G 'http://localhost:9911/' \
+  --data-urlencode "query=$query" \
+  --data-urlencode "service=tenor"
 fi</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -640,14 +616,9 @@ for monitoring arrow key presses</string>
 				<key>script</key>
 				<string>#!/bin/bash
 
-chmod +x ./gif-downloader.bin
-
 xattr -d com.apple.quarantine ./AlfredGifBrowser.app
 xattr -d com.apple.quarantine ./AlfredGifBrowser.app/Contents/MacOS/AlfredGifBrowser
-xattr -d com.apple.quarantine ./gif-downloader.bin
 
-# Kill instances running from previous version of workflow
-killall gif-downloader.bin
 
 # Enable AlfredGifBrowser.app to listen to Alfred's events
 defaults write com.runningwithcrayons.Alfred experimental.presssecretary -bool YES
@@ -709,7 +680,7 @@ killall AlfredGifBrowser</string>
 				<key>subtext</key>
 				<string>.gif-clear-cached-searches</string>
 				<key>text</key>
-				<string>Clear Cached GIF Searches (keep GIFs)</string>
+				<string>Clear Cached GIF Searches</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -754,63 +725,7 @@ rm *.html</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>#!/bin/bash
-
-cd "$alfred_workflow_cache"
-rm *.html
-rm *.gif</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>91DD521D-37E0-45D1-9DD1-3FE2C7A0D936</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>.gif-delete-downloads</string>
-				<key>subtext</key>
-				<string>.gif-delete-downloads</string>
-				<key>text</key>
-				<string>Delete Downloaded GIFs</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>12246986-CCD9-4CFB-A388-6780118E8073</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
 				<string>query="$(cat /tmp/alfred-gif-query)"
-
-function is_server_up() {
-  pgrep gif-downloader.bin &gt; /dev/null
-}
-
-function start_server() {
-  ./gif-downloader.bin &gt; /tmp/alfred-gif-search.log 2&gt;&amp;1 &amp; 
-}
 
 function is_gif_browser_up() {
   pgrep AlfredGifBrowser &gt; /dev/null
@@ -819,10 +734,6 @@ function is_gif_browser_up() {
 function start_gif_browser() {
   ./AlfredGifBrowser.app/Contents/MacOS/AlfredGifBrowser &gt; /tmp/gif-browser.log 2&gt;&amp;1 &amp;
 }
-
-if ! is_server_up; then
-  start_server
-fi
 
 if ! is_gif_browser_up;
 then
@@ -834,9 +745,9 @@ then
    "arg": "$query"}]}
 EOF
 else
-curl -s -G 'http://localhost:8910/' \
+curl -s -G 'http://localhost:9911/' \
   --data-urlencode "query=$query" \
-  --data-urlencode "sticker=1"
+  --data-urlencode "service=sticker"
 fi</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -1082,13 +993,6 @@ EOF</string>
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>12246986-CCD9-4CFB-A388-6780118E8073</key>
-		<dict>
-			<key>xpos</key>
-			<integer>185</integer>
-			<key>ypos</key>
-			<integer>725</integer>
-		</dict>
 		<key>14696DC3-6EA6-4025-8A09-1583D7926BEF</key>
 		<dict>
 			<key>note</key>
@@ -1096,14 +1000,14 @@ EOF</string>
 			<key>xpos</key>
 			<integer>555</integer>
 			<key>ypos</key>
-			<integer>1185</integer>
+			<integer>1000</integer>
 		</dict>
 		<key>1A966A24-354B-4D9D-B4BC-253DE27A75B6</key>
 		<dict>
 			<key>xpos</key>
 			<integer>555</integer>
 			<key>ypos</key>
-			<integer>925</integer>
+			<integer>740</integer>
 		</dict>
 		<key>1F55B002-55D8-4A4F-AD72-A1E2854DEAB0</key>
 		<dict>
@@ -1135,7 +1039,7 @@ EOF</string>
 			<key>xpos</key>
 			<integer>745</integer>
 			<key>ypos</key>
-			<integer>1085</integer>
+			<integer>900</integer>
 		</dict>
 		<key>44CDD528-D545-44E4-ACBC-EB111433B1B0</key>
 		<dict>
@@ -1156,7 +1060,7 @@ EOF</string>
 			<key>xpos</key>
 			<integer>595</integer>
 			<key>ypos</key>
-			<integer>1030</integer>
+			<integer>845</integer>
 		</dict>
 		<key>5FD17AF0-4A40-4447-B0C4-D09A2927D9C9</key>
 		<dict>
@@ -1184,24 +1088,14 @@ EOF</string>
 			<key>xpos</key>
 			<integer>185</integer>
 			<key>ypos</key>
-			<integer>925</integer>
-		</dict>
-		<key>91DD521D-37E0-45D1-9DD1-3FE2C7A0D936</key>
-		<dict>
-			<key>note</key>
-			<string>rm *.html
-rm *.gif</string>
-			<key>xpos</key>
-			<integer>555</integer>
-			<key>ypos</key>
-			<integer>725</integer>
+			<integer>740</integer>
 		</dict>
 		<key>B0E88D92-E353-4B44-A933-DA7C08A377F5</key>
 		<dict>
 			<key>xpos</key>
 			<integer>10</integer>
 			<key>ypos</key>
-			<integer>1055</integer>
+			<integer>870</integer>
 		</dict>
 		<key>B7BF0458-29EB-4FDB-9B1E-422BCAB10091</key>
 		<dict>
@@ -1229,14 +1123,14 @@ rm *.gif</string>
 			<key>xpos</key>
 			<integer>365</integer>
 			<key>ypos</key>
-			<integer>1055</integer>
+			<integer>870</integer>
 		</dict>
 		<key>C9B6A67D-01E0-402D-B377-D7E2FE47F4D7</key>
 		<dict>
 			<key>xpos</key>
 			<integer>185</integer>
 			<key>ypos</key>
-			<integer>1185</integer>
+			<integer>1000</integer>
 		</dict>
 		<key>D09D266A-FCE8-4386-9CFD-222EED5E2CDF</key>
 		<dict>
@@ -1261,7 +1155,7 @@ rm *.gif</string>
 			<key>xpos</key>
 			<integer>595</integer>
 			<key>ypos</key>
-			<integer>1140</integer>
+			<integer>955</integer>
 		</dict>
 		<key>E4949A54-F834-48EA-A3C4-7BC188770BFD</key>
 		<dict>
@@ -1282,11 +1176,11 @@ rm *.gif</string>
 			<key>xpos</key>
 			<integer>800</integer>
 			<key>ypos</key>
-			<integer>1055</integer>
+			<integer>870</integer>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.2.1</string>
+	<string>0.3.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/mr-pennyworth/alfred-gif</string>
 </dict>

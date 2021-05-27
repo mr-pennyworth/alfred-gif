@@ -13,7 +13,6 @@ BUILD_DIR = 'wfbuild'
 WF_FILES = [
   'AlfredGifBrowser.app',
   'B9741F37-05A5-4DB4-87C0-2848655113DF.png',
-  'gif-downloader.bin',
   'icon.png',
   'info.plist',
   'README.md',
@@ -106,7 +105,6 @@ if __name__ == '__main__':
   set_app_version(old_v=app_v, new_v=big_v)
 
   subprocess.call(['./build-scripts/mkapp.sh'])
-  subprocess.call(['./build-scripts/mkdownloader.sh'])
   copy(WF_FILES, BUILD_DIR)
   wf_name = make_export_ready(f'{BUILD_DIR}/info.plist', big_v)
   with cwd(BUILD_DIR):

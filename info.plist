@@ -1171,8 +1171,10 @@ rm *.html</string>
 				<key>ignoredynamicplaceholders</key>
 				<false/>
 				<key>largetypetext</key>
-				<string>Allow "Accessibility"
-For "AlfredGifBrowser.app"
+				<string>Allow "Accessibility" For "AlfredGifBrowser.app"
+
+1) If the app is already present in the pane, remove it.
+2) Drag and drop to add the app again.
 
 The GIF browser needs these permissions
 for monitoring arrow key presses</string>
@@ -1198,25 +1200,47 @@ for monitoring arrow key presses</string>
 				<key>script</key>
 				<string>#!/bin/bash
 
+
 xattr -d com.apple.quarantine ./AlfredGifBrowser.app
 xattr -d com.apple.quarantine ./AlfredGifBrowser.app/Contents/MacOS/AlfredGifBrowser
 
 
-# Enable AlfredGifBrowser.app to listen to Alfred's events
-defaults write com.runningwithcrayons.Alfred experimental.presssecretary -bool YES
+wfdir="$alfred_preferences/workflows/$alfred_workflow_uid"
 
-# Open the app so that it shows in the Accessibility Settings
-open ./AlfredGifBrowser.app
+cat &lt;&lt;EOF | osascript
+tell application "Finder"
+	set wfDir to POSIX file "$wfdir"
+	open wfDir
+	activate
+
+	set win to front Finder window
+	set gifApp to item "AlfredGifBrowser.app" of win
+
+	set bounds of win to {0, 0, 220, 350}
+	set the toolbar visible of win to false
+	set the statusbar visible of win to false
+	set the pathbar visible of win to false
+	set the sidebar width of win to 0
+	set the current view of win to icon view
+	set icon size of icon view options of win to 220
+	set arrangement of icon view options of win to not arranged
+	set position of gifApp to {-5000, -5000}
+	close win
+	open wfDir
+	select gifApp
+end tell
+EOF
+
 
 open "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility"
 osascript &lt;&lt;END
   tell application "System Preferences"
     activate
+    tell the preferences window
+      set bounds to {320, 0, 500, 500}
+    end tell
   end tell
-END
-
-# The app needs to be restarted anyway, so close it
-killall AlfredGifBrowser</string>
+END</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -2118,7 +2142,7 @@ EOF</string>
 		<string>giphy_key</string>
 	</array>
 	<key>version</key>
-	<string>0.3.1</string>
+	<string>0.3.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/mr-pennyworth/alfred-gif</string>
 </dict>

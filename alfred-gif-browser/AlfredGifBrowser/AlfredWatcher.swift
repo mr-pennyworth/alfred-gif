@@ -1,3 +1,4 @@
+import Alfred
 import Cocoa
 import CoreFoundation
 
@@ -26,6 +27,8 @@ class AlfredWatcher {
     onLeftArrowPressed: @escaping () -> Void,
     setAlfredFrame: @escaping (NSRect) -> Void
   ) {
+    PressSecretary.enable()
+
     onDestroy = onAlfredWindowDestroy
     onDownArrow = onDownArrowPressed
     onUpArrow = onUpArrowPressed

@@ -2142,7 +2142,7 @@ EOF</string>
 		<string>giphy_key</string>
 	</array>
 	<key>version</key>
-	<string>0.3.2</string>
+	<string>0.3.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/mr-pennyworth/alfred-gif</string>
 </dict>

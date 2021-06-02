@@ -5,12 +5,10 @@ import CoreFoundation
 typealias Dict = [String: Any]
 
 class AlfredWatcher {
-  var onDestroy: (() -> Void)!
   var onDownArrow: (() -> Void)!
   var onUpArrow: (() -> Void)!
   var onRightArrow: (() -> Void)!
   var onLeftArrow: (() -> Void)!
-  var setAlfredFrame: ((NSRect)-> Void)!
 
   var mods: NSEvent.ModifierFlags = NSEvent.ModifierFlags()
 
@@ -27,14 +25,12 @@ class AlfredWatcher {
     onLeftArrowPressed: @escaping () -> Void,
     setAlfredFrame: @escaping (NSRect) -> Void
   ) {
-    PressSecretary.enable()
-
-    onDestroy = onAlfredWindowDestroy
+    Alfred.onHide(callback: onAlfredWindowDestroy)
+    Alfred.onFrameChange(callback: setAlfredFrame)
     onDownArrow = onDownArrowPressed
     onUpArrow = onUpArrowPressed
     onRightArrow = onRightArrowPressed
     onLeftArrow = onLeftArrowPressed
-    self.setAlfredFrame = setAlfredFrame
 
     NSEvent.addGlobalMonitorForEvents(
       matching: [NSEvent.EventTypeMask.keyDown],
@@ -61,25 +57,5 @@ class AlfredWatcher {
         self.mods = event.modifierFlags.intersection(.deviceIndependentFlagsMask)
       }
     )
-
-    DistributedNotificationCenter.default().addObserver(
-      self,
-      selector: #selector(handleAlfredNotification),
-      name: NSNotification.Name(rawValue: "alfred.presssecretary"),
-      object: nil,
-      suspensionBehavior: .deliverImmediately
-    )
-  }
-
-  @objc func handleAlfredNotification(notification: NSNotification) {
-    // log("\(notification)")
-    let notif = notification.userInfo! as! Dict
-    let notifType = notif["announcement"] as! String
-    if (notifType == "window.hidden") {
-      onDestroy()
-    } else if (notifType == "selection.changed") {
-      let frame = NSRectFromString(notif["windowframe"] as! String)
-      setAlfredFrame(frame)
-    }
   }
 }

@@ -1,8 +1,12 @@
-# Alfred GIF Search
-
+<h1 align="center">
+  
 <a href="https://github.com/mr-pennyworth/alfred-gif/releases/latest/">
-  <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/mr-pennyworth/alfred-gif/total">
-</a><br/><br/>
+  <img src="icon.png" width="16%"><br/>
+  <img alt="Download"
+       src="https://img.shields.io/github/downloads/mr-pennyworth/alfred-gif/total?color=purple&label=Download"><br/>
+</a>
+  Alfred GIF Search
+</h1>
 
 Search for GIFs and animated stickers on [Tenor](https://tenor.com)
 and [Giphy](https://giphy.com) from [Alfred](https://alfredapp.com).

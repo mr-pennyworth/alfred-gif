@@ -2272,7 +2272,7 @@ Check for updates: once a week</string>
 		<string>giphy_key</string>
 	</array>
 	<key>version</key>
-	<string>0.3.4</string>
+	<string>0.3.5</string>
 	<key>webaddress</key>
 	<string>https://github.com/mr-pennyworth/alfred-gif#readme</string>
 </dict>

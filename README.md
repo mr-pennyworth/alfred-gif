@@ -1,3 +1,10 @@
+> [!WARNING]
+> This workflow is **not maintained**.
+> The main reason being the author not using GIFs anymore.
+> Consider https://github.com/erikopinaldo/alfred-gif which seems to be
+> actively maintained as of 18 June 2024.
+
+
 <h1 align="center">
   
 <a href="https://github.com/mr-pennyworth/alfred-gif/releases/latest/">
